@@ -1,0 +1,590 @@
+26/04/24 16:45:17 WARN Utils: Your hostname, yousef-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+26/04/24 16:45:17 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/04/24 16:45:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 1) / 4][Stage 1:==============>                                            (1 + 1) / 4][Stage 1:=============================>                             (2 + 1) / 4][Stage 1:============================================>              (3 + 1) / 4]                                                                                [Stage 2:>                                                          (0 + 1) / 4][Stage 2:==============>                                            (1 + 1) / 4][Stage 2:=============================>                             (2 + 1) / 4][Stage 2:============================================>              (3 + 1) / 4]                                                                                [Stage 5:>                                                          (0 + 1) / 1]                                                                                
+=== SCHEMA ===
+root
+ |-- order_id: string (nullable = true)
+ |-- order_date: timestamp (nullable = true)
+ |-- order_year: integer (nullable = true)
+ |-- order_month: integer (nullable = true)
+ |-- order_day: integer (nullable = true)
+ |-- order_hour: integer (nullable = true)
+ |-- order_minute: integer (nullable = true)
+ |-- order_second: integer (nullable = true)
+ |-- is_weekend: string (nullable = true)
+ |-- order_status: string (nullable = true)
+ |-- return_reason: string (nullable = true)
+ |-- customer_id: string (nullable = true)
+ |-- customer_name: string (nullable = true)
+ |-- gender: string (nullable = true)
+ |-- age: integer (nullable = true)
+ |-- customer_segment: string (nullable = true)
+ |-- country: string (nullable = true)
+ |-- city: string (nullable = true)
+ |-- customer_loyalty_score: double (nullable = true)
+ |-- total_orders_by_customer: integer (nullable = true)
+ |-- account_creation_date: date (nullable = true)
+ |-- product_id: string (nullable = true)
+ |-- product_name: string (nullable = true)
+ |-- category: string (nullable = true)
+ |-- sub_category: string (nullable = true)
+ |-- brand: string (nullable = true)
+ |-- product_rating_avg: double (nullable = true)
+ |-- product_reviews_count: integer (nullable = true)
+ |-- stock_quantity: integer (nullable = true)
+ |-- unit_price_usd: double (nullable = true)
+ |-- quantity: integer (nullable = true)
+ |-- discount_percent: integer (nullable = true)
+ |-- discount_amount_usd: double (nullable = true)
+ |-- total_price_usd: double (nullable = true)
+ |-- cost_usd: double (nullable = true)
+ |-- profit_usd: double (nullable = true)
+ |-- tax_usd: double (nullable = true)
+ |-- currency: string (nullable = true)
+ |-- payment_method: string (nullable = true)
+ |-- payment_status: string (nullable = true)
+ |-- installment_plan: string (nullable = true)
+ |-- shipping_method: string (nullable = true)
+ |-- shipping_cost_usd: double (nullable = true)
+ |-- delivery_days: integer (nullable = true)
+ |-- shipping_country: string (nullable = true)
+ |-- warehouse_location: string (nullable = true)
+ |-- delivery_status: string (nullable = true)
+ |-- rating: integer (nullable = true)
+ |-- review_sentiment: string (nullable = true)
+ |-- customer_feedback: string (nullable = true)
+ |-- coupon_used: string (nullable = true)
+ |-- coupon_code: string (nullable = true)
+ |-- campaign_source: string (nullable = true)
+ |-- device_type: string (nullable = true)
+ |-- traffic_source: string (nullable = true)
+ |-- session_duration_minutes: double (nullable = true)
+ |-- pages_visited: integer (nullable = true)
+ |-- abandoned_cart_before: string (nullable = true)
+ |-- fraud_risk_score: double (nullable = true)
+ |-- profit_margin_percent: double (nullable = true)
+ |-- order_priority: string (nullable = true)
+ |-- support_ticket_created: string (nullable = true)
+
+
+=== TOTAL RECORDS ===
+1000123
+
+=== SAMPLE DATA ===
++---------+--------------------+----------+-----------+---------+----------+------------+------------+----------+------------+-------------+-----------+---------------+------+---+----------------+-------------+-----------+----------------------+------------------------+---------------------+----------+--------------------+-----------+------------+------+------------------+---------------------+--------------+--------------+--------+----------------+-------------------+---------------+--------+----------+-------+--------+--------------+--------------+----------------+---------------+-----------------+-------------+----------------+------------------+---------------+------+----------------+--------------------+-----------+-----------+---------------+-----------+--------------+------------------------+-------------+---------------------+----------------+---------------------+--------------+----------------------+
+| order_id|          order_date|order_year|order_month|order_day|order_hour|order_minute|order_second|is_weekend|order_status|return_reason|customer_id|  customer_name|gender|age|customer_segment|      country|       city|customer_loyalty_score|total_orders_by_customer|account_creation_date|product_id|        product_name|   category|sub_category| brand|product_rating_avg|product_reviews_count|stock_quantity|unit_price_usd|quantity|discount_percent|discount_amount_usd|total_price_usd|cost_usd|profit_usd|tax_usd|currency|payment_method|payment_status|installment_plan|shipping_method|shipping_cost_usd|delivery_days|shipping_country|warehouse_location|delivery_status|rating|review_sentiment|   customer_feedback|coupon_used|coupon_code|campaign_source|device_type|traffic_source|session_duration_minutes|pages_visited|abandoned_cart_before|fraud_risk_score|profit_margin_percent|order_priority|support_ticket_created|
++---------+--------------------+----------+-----------+---------+----------+------------+------------+----------+------------+-------------+-----------+---------------+------+---+----------------+-------------+-----------+----------------------+------------------------+---------------------+----------+--------------------+-----------+------------+------+------------------+---------------------+--------------+--------------+--------+----------------+-------------------+---------------+--------+----------+-------+--------+--------------+--------------+----------------+---------------+-----------------+-------------+----------------+------------------+---------------+------+----------------+--------------------+-----------+-----------+---------------+-----------+--------------+------------------------+-------------+---------------------+----------------+---------------------+--------------+----------------------+
+|ORD-XAJI0|2024-10-14 11:20:...|      2024|         10|       14|        11|          20|           5|        No|   Completed|         NULL|  CUS-6DPBH|    Drew Warren|  Male| 53|         Regular|  Netherlands|    Utrecht|                  22.0|                      38|           2022-04-23|  PRD-1FPK|Coffee Maker Auto...|       Home|     Kitchen|  Nike|               3.2|                 3112|            99|        120.51|       3|              10|              36.15|         325.38|  232.14|     93.24|  28.14|     USD|     Apple Pay|          Paid|              No|        Economy|             1.97|            5|     Netherlands|                UK|     In Transit|     3|         Neutral|                NULL|        Yes|    CPN-ZBI|          Email|     Mobile|        Search|                    52.1|           13|                   No|            45.3|                28.66|        Medium|                   Yes|
+|ORD-NHJ7X|2024-10-21 00:49:...|      2024|         10|       21|         0|          49|          44|        No|   Completed|         NULL|  CUS-G0FN9|Victor Sullivan|  Male| 61|         Regular|United States|Los Angeles|                  82.2|                      21|           2022-08-22|  PRD-C6UZ|   Yoga Mat Non-Slip|     Health| Supplements|  Asus|               3.8|                 3758|           146|         60.33|       2|              15|               18.1|         102.56|   67.78|     34.78|   8.96|     USD| Bank Transfer|          Paid|             Yes|       Next Day|             5.48|            3|   United States|                UK|      Delivered|     1|        Negative|Good value for money|        Yes|    CPN-W2P|     Google Ads|    Desktop|      Referral|                    36.2|           15|                   No|            97.1|                33.91|           Low|                   Yes|
+|ORD-YTJXE|2025-03-17 19:49:...|      2025|          3|       17|        19|          49|          36|        No|   Completed|         NULL|  CUS-Q85JS|   Jason Garcia|  Male| 50|             VIP|       France|       Nice|                  60.9|                      10|           2024-08-04|  PRD-T2TA|       Blender 1000W|       Home|   Furniture|  Asus|               3.0|                 2973|           899|        295.89|       3|               0|                0.0|         887.67|  419.22|    468.45|  69.56|     USD|   Credit Card|          Paid|              No|        Economy|             20.4|           13|          France|                UK|     In Transit|     2|        Negative|  Highly recommended|        Yes|    CPN-J5P|       Facebook|     Tablet|        Search|                    43.1|           13|                   No|            43.8|                52.77|          High|                    No|
+|ORD-EIMVI|2024-09-27 06:24:...|      2024|          9|       27|         6|          24|          44|        No|   Completed|         NULL|  CUS-CWI64|   David Norris|  Male| 50|         Regular|        Italy|      Milan|                  53.9|                      47|           2023-08-06|  PRD-IROD|    Badminton Racket|     Sports| Accessories|Adidas|               3.8|                 3825|           884|        186.33|       1|               0|                0.0|         186.33|  115.24|     71.09|  16.78|     USD|   Credit Card|          Paid|              No|        Express|             4.76|            8|           Italy|          USA-West|      Delivered|     3|         Neutral|  Highly recommended|        Yes|    CPN-5C3|      Instagram|     Mobile|        Direct|                    39.5|           18|                  Yes|            96.9|                38.15|           Low|                   Yes|
+|ORD-OR56F|2025-05-21 17:10:...|      2025|          5|       21|        17|          10|          48|        No|   Completed|         NULL|  CUS-O72KZ| Laura Phillips|Female| 27|         Regular|      Germany|     Berlin|                  57.9|                      35|           2023-01-02|  PRD-LBR7|Screen Protector ...|Electronics|     Cameras| Anker|               3.1|                 4160|            82|        427.16|       1|              10|              42.72|         384.44|  257.39|    127.05|  23.74|     USD|   Credit Card|          Paid|              No|       Standard|            15.48|            7|         Germany|                UK|      Delivered|     3|         Neutral|     Average quality|        Yes|    CPN-YLJ|       Facebook|     Tablet|        Social|                    28.0|            3|                  Yes|            45.8|                33.05|          High|                   Yes|
++---------+--------------------+----------+-----------+---------+----------+------------+------------+----------+------------+-------------+-----------+---------------+------+---+----------------+-------------+-----------+----------------------+------------------------+---------------------+----------+--------------------+-----------+------------+------+------------------+---------------------+--------------+--------------+--------+----------------+-------------------+---------------+--------+----------+-------+--------+--------------+--------------+----------------+---------------+-----------------+-------------+----------------+------------------+---------------+------+----------------+--------------------+-----------+-----------+---------------+-----------+--------------+------------------------+-------------+---------------------+----------------+---------------------+--------------+----------------------+
+only showing top 5 rows
+[Stage 6:>                                                          (0 + 1) / 1]                                                                                
+
+============================================================
+Q1 - Completed orders > 500 RESULT
+============================================================
++---------+--------------------+----------+-----------+---------+----------+------------+------------+----------+------------+-------------+-----------+----------------+------+---+----------------+-----------+---------+----------------------+------------------------+---------------------+----------+--------------------+-----------+------------+-------+------------------+---------------------+--------------+--------------+--------+----------------+-------------------+---------------+------------------+----------+-------+--------+--------------+--------------+----------------+---------------+-----------------+-------------+----------------+------------------+---------------+------+----------------+--------------------+-----------+-----------+---------------+-----------+--------------+------------------------+-------------+---------------------+----------------+---------------------+--------------+----------------------+
+| order_id|          order_date|order_year|order_month|order_day|order_hour|order_minute|order_second|is_weekend|order_status|return_reason|customer_id|   customer_name|gender|age|customer_segment|    country|     city|customer_loyalty_score|total_orders_by_customer|account_creation_date|product_id|        product_name|   category|sub_category|  brand|product_rating_avg|product_reviews_count|stock_quantity|unit_price_usd|quantity|discount_percent|discount_amount_usd|total_price_usd|          cost_usd|profit_usd|tax_usd|currency|payment_method|payment_status|installment_plan|shipping_method|shipping_cost_usd|delivery_days|shipping_country|warehouse_location|delivery_status|rating|review_sentiment|   customer_feedback|coupon_used|coupon_code|campaign_source|device_type|traffic_source|session_duration_minutes|pages_visited|abandoned_cart_before|fraud_risk_score|profit_margin_percent|order_priority|support_ticket_created|
++---------+--------------------+----------+-----------+---------+----------+------------+------------+----------+------------+-------------+-----------+----------------+------+---+----------------+-----------+---------+----------------------+------------------------+---------------------+----------+--------------------+-----------+------------+-------+------------------+---------------------+--------------+--------------+--------+----------------+-------------------+---------------+------------------+----------+-------+--------+--------------+--------------+----------------+---------------+-----------------+-------------+----------------+------------------+---------------+------+----------------+--------------------+-----------+-----------+---------------+-----------+--------------+------------------------+-------------+---------------------+----------------+---------------------+--------------+----------------------+
+|ORD-YTJXE|2025-03-17 19:49:...|      2025|          3|       17|        19|          49|          36|        No|   Completed|         NULL|  CUS-Q85JS|    Jason Garcia|  Male| 50|             VIP|     France|     Nice|                  60.9|                      10|           2024-08-04|  PRD-T2TA|       Blender 1000W|       Home|   Furniture|   Asus|               3.0|                 2973|           899|        295.89|       3|               0|                0.0|         887.67|            419.22|    468.45|  69.56|     USD|   Credit Card|          Paid|              No|        Economy|             20.4|           13|          France|                UK|     In Transit|     2|        Negative|  Highly recommended|        Yes|    CPN-J5P|       Facebook|     Tablet|        Search|                    43.1|           13|                   No|            43.8|                52.77|          High|                    No|
+|ORD-PN6QF|2025-10-20 07:16:...|      2025|         10|       20|         7|          16|          19|        No|   Completed|         NULL|  CUS-SXW71|Sherry Hernandez|Female| 45|         Premium|    Belgium|    Ghent|                  32.2|                      16|           2021-04-19|  PRD-5IQV|Wireless Mouse 2....|Electronics|     Tablets|   Nike|               3.1|                 2662|           186|         248.9|       3|              15|              112.0|          634.7|374.90999999999997|    259.79|  59.67|     USD|    Debit Card|          Paid|              No|        Express|             2.14|           12|         Belgium|      Asia-Pacific|      Delivered|     2|        Negative|  Highly recommended|         No|       NULL|        Organic|     Mobile|        Direct|                    18.4|           13|                  Yes|            30.6|                40.93|          High|                    No|
+|ORD-0H2CW|2024-05-19 23:39:...|      2024|          5|       19|        23|          39|          58|       Yes|   Completed|         NULL|  CUS-G1M8X|   Joseph Thomas|  Male| 33|         Regular|     France|     Lyon|                  17.3|                      10|           2023-05-23|  PRD-8WQU|       4K Webcam Pro|Electronics|     Laptops|   Dell|               4.4|                 4624|           658|         321.3|       5|               5|              80.33|        1526.17|1110.5500000000002|    415.62| 100.43|     USD| Bank Transfer|          Paid|              No|        Economy|            11.06|            5|          France|        EU-Central|      Delivered|     3|         Neutral|                NULL|        Yes|    CPN-LQC|          Email|     Mobile|        Direct|                    37.3|           17|                   No|            46.3|                27.23|          High|                   Yes|
+|ORD-O1750|2024-03-27 14:10:...|      2024|          3|       27|        14|          10|          23|        No|   Completed|         NULL|  CUS-EHLXS| Alexis Richards|Female| 29|         Regular|Netherlands|The Hague|                  54.6|                      44|           2023-11-29|  PRD-R8KK|Vacuum Robot Cleaner|       Home|     Bedding|Philips|               4.4|                 4005|           324|        154.34|       5|              20|             154.34|         617.36|             492.8|    124.56|  39.31|     USD|   Credit Card|          Paid|             Yes|        Economy|            20.46|           13|     Netherlands|          USA-West|      Delivered|     3|         Neutral|Good value for money|         No|       NULL|        Organic|     Tablet|        Social|                    45.1|            7|                  Yes|            82.8|                20.18|        Medium|                    No|
+|ORD-EWVIY|2024-10-07 16:38:...|      2024|         10|        7|        16|          38|          12|        No|   Completed|         NULL|  CUS-WBOZD|  Todd Rodriguez|  Male| 18|             VIP|     Canada|  Calgary|                  65.3|                      31|           2023-06-01|  PRD-1KKC|Digital Blood Pre...|     Health|     Fitness|  Canon|               3.5|                  305|           935|        185.08|       4|              20|             148.06|         592.26|            335.16|     257.1|  56.85|     USD| Bank Transfer|          Paid|             Yes|        Express|            23.42|           14|          Canada|        EU-Central|     In Transit|     1|        Negative|     Average quality|        Yes|    CPN-7MQ|      Affiliate|     Tablet|         Email|                    30.1|            5|                   No|            27.3|                43.41|           Low|                    No|
+|ORD-20U9I|2024-05-17 03:19:...|      2024|          5|       17|         3|          19|          54|        No|   Completed|         NULL|  CUS-YGJJF|      Omar Yates|  Male| 45|         Regular|     France| Toulouse|                  78.3|                      24|           2023-04-30|  PRD-ZRWQ| Electric Toothbrush|       Home|   Furniture|Philips|               3.0|                 3241|           340|        255.65|       4|              15|             153.39|         869.21|            510.12|    359.09|  58.01|     USD|     Apple Pay|          Paid|              No|       Next Day|             8.02|           12|          France|          USA-West|      Delivered|     2|        Negative|     Could be better|         No|       NULL|          Email|     Tablet|      Referral|                    58.1|            8|                   No|            37.6|                41.31|        Medium|                    No|
+|ORD-EUVTY|2024-05-19 10:03:...|      2024|          5|       19|        10|           3|           0|       Yes|   Completed|         NULL|  CUS-8QZPK|  Jacob Chambers|  Male| 70|         Premium|      Spain|  Seville|                  13.9|                      20|           2021-06-22|  PRD-XZ2C| Yoga Pants Leggings|   Clothing|   Kids Wear|  Canon|               3.8|                 4150|           945|        139.25|       4|              10|               55.7|          501.3|            354.92|    146.38|  34.08|     USD|     Apple Pay|          Paid|              No|       Standard|            19.22|           11|           Spain|        EU-Central|      Delivered|     5|        Positive|      Great product!|         No|       NULL|          Email|    Desktop|        Direct|                     1.6|            9|                  Yes|            51.1|                 29.2|          High|                   Yes|
+|ORD-2TNHE|2024-04-27 17:22:...|      2024|          4|       27|        17|          22|          21|       Yes|   Completed|         NULL|  CUS-R8LNO|    Ronald Huber|  Male| 40|         Regular|      Italy| Florence|                  17.3|                      44|           2021-07-06|  PRD-VYLI|        Air Fryer 5L|       Home|     Bedding|  Anker|               3.7|                 1158|           523|        128.77|       5|               0|                0.0|         643.85|            331.65|     312.2|  38.17|     USD|     Apple Pay|          Paid|              No|        Express|            12.24|            3|           Italy|          USA-West|      Delivered|     4|        Positive|                NULL|        Yes|    CPN-58R|       Facebook|    Desktop|         Email|                    30.8|           16|                   No|            68.5|                48.49|        Medium|                    No|
+|ORD-E1OCJ|2025-03-10 05:16:...|      2025|          3|       10|         5|          16|          36|        No|   Completed|         NULL|  CUS-ZEFLI|  Cynthia Ingram|Female| 49|         Regular|     France| Toulouse|                  37.5|                       5|           2021-11-24|  PRD-SK7N|Phone Case Shockp...|Electronics| Accessories|   Nike|               4.2|                  763|           748|        486.35|       3|              20|             291.81|        1167.24|            931.89|    235.35|  81.57|     USD| Bank Transfer|          Paid|              No|        Economy|             6.71|           14|          France|        EU-Central|      Delivered|     5|        Positive|       Fast delivery|         No|       NULL|          Email|     Tablet|        Direct|                     3.7|           15|                  Yes|            12.4|                20.16|           Low|                    No|
+|ORD-3JCZU|2025-01-03 23:47:...|      2025|          1|        3|        23|          47|          55|        No|   Completed|         NULL|  CUS-QMRUN|  Erica Griffith|Female| 67|         Regular|    Belgium| Brussels|                  22.8|                      33|           2021-08-18|  PRD-4ABN|USB-C Fast Charge...|Electronics| Smartphones|  Anker|               4.9|                  289|           566|        403.53|       4|               0|                0.0|        1614.12|            765.88|    848.24| 154.62|     USD|    Debit Card|          Paid|             Yes|       Standard|            14.29|            2|         Belgium|                UK|      Delivered|     1|        Negative|       Fast delivery|        Yes|    CPN-298|     Google Ads|    Desktop|        Social|                    46.6|           10|                   No|             8.6|                52.55|        Medium|                   Yes|
++---------+--------------------+----------+-----------+---------+----------+------------+------------+----------+------------+-------------+-----------+----------------+------+---+----------------+-----------+---------+----------------------+------------------------+---------------------+----------+--------------------+-----------+------------+-------+------------------+---------------------+--------------+--------------+--------+----------------+-------------------+---------------+------------------+----------+-------+--------+--------------+--------------+----------------+---------------+-----------------+-------------+----------------+------------------+---------------+------+----------------+--------------------+-----------+-----------+---------------+-----------+--------------+------------------------+-------------+---------------------+----------------+---------------------+--------------+----------------------+
+only showing top 10 rows
+[Stage 7:>                                                          (0 + 1) / 4][Stage 7:==============>                                            (1 + 1) / 4][Stage 7:=============================>                             (2 + 1) / 4][Stage 7:============================================>              (3 + 1) / 4]                                                                                [Stage 10:>                                                         (0 + 1) / 4][Stage 10:==============>                                           (1 + 1) / 4][Stage 10:=============================>                            (2 + 1) / 4][Stage 10:===========================================>              (3 + 1) / 4]                                                                                
+
+------------------------------------------------------------
+Q1 - Completed orders > 500 EXPLAIN PLAN
+------------------------------------------------------------
+== Parsed Logical Plan ==
+'Filter (('order_status = Completed) AND ('total_price_usd > 500))
++- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Analyzed Logical Plan ==
+order_id: string, order_date: timestamp, order_year: int, order_month: int, order_day: int, order_hour: int, order_minute: int, order_second: int, is_weekend: string, order_status: string, return_reason: string, customer_id: string, customer_name: string, gender: string, age: int, customer_segment: string, country: string, city: string, customer_loyalty_score: double, total_orders_by_customer: int, account_creation_date: date, product_id: string, product_name: string, category: string, ... 38 more fields
+Filter ((order_status#26 = Completed) AND (total_price_usd#50 > cast(500 as double)))
++- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Filter ((isnotnull(order_status#26) AND isnotnull(total_price_usd#50)) AND ((order_status#26 = Completed) AND (total_price_usd#50 > 500.0)))
++- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+*(1) Filter (((isnotnull(order_status#26) AND isnotnull(total_price_usd#50)) AND (order_status#26 = Completed)) AND (total_price_usd#50 > 500.0))
++- FileScan csv [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] Batched: false, DataFilters: [isnotnull(order_status#26), isnotnull(total_price_usd#50), (order_status#26 = Completed), (total..., Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [IsNotNull(order_status), IsNotNull(total_price_usd), EqualTo(order_status,Completed), GreaterTha..., ReadSchema: struct<order_id:string,order_date:timestamp,order_year:int,order_month:int,order_day:int,order_ho...
+
+
+============================================================
+Q2 - Revenue by category RESULT
+============================================================
++-----------+--------------+
+|   category| total_revenue|
++-----------+--------------+
+|Electronics|1.3986598694E8|
+|       Home| 8.782867776E7|
+|     Sports| 7.291747085E7|
+|     Health| 5.746792555E7|
+|   Clothing|  4.52057959E7|
++-----------+--------------+
+
+
+------------------------------------------------------------
+Q2 - Revenue by category EXPLAIN PLAN
+------------------------------------------------------------
+== Parsed Logical Plan ==
+'Sort ['total_revenue DESC NULLS LAST], true
++- Aggregate [category#40], [category#40, round(sum(total_price_usd#50), 2) AS total_revenue#894]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Analyzed Logical Plan ==
+category: string, total_revenue: double
+Sort [total_revenue#894 DESC NULLS LAST], true
++- Aggregate [category#40], [category#40, round(sum(total_price_usd#50), 2) AS total_revenue#894]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [total_revenue#894 DESC NULLS LAST], true
++- Aggregate [category#40], [category#40, round(sum(total_price_usd#50), 2) AS total_revenue#894]
+   +- Project [category#40, total_price_usd#50]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [total_revenue#894 DESC NULLS LAST], true, 0
+   +- Exchange rangepartitioning(total_revenue#894 DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=152]
+      +- HashAggregate(keys=[category#40], functions=[sum(total_price_usd#50)], output=[category#40, total_revenue#894])
+         +- Exchange hashpartitioning(category#40, 8), ENSURE_REQUIREMENTS, [plan_id=149]
+            +- HashAggregate(keys=[category#40], functions=[partial_sum(total_price_usd#50)], output=[category#40, sum#904])
+               +- FileScan csv [category#40,total_price_usd#50] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<category:string,total_price_usd:double>
+
+
+============================================================
+Q3 - Avg order value by country RESULT
+============================================================
++--------------+---------------+
+|       country|avg_order_value|
++--------------+---------------+
+|         Italy|         405.73|
+|     Australia|         404.23|
+|         Spain|         403.61|
+| United States|         403.41|
+|   Netherlands|         403.24|
+|United Kingdom|         403.15|
+|       Belgium|         402.73|
+|       Germany|         402.64|
+|        Canada|         401.94|
+|        France|         401.71|
++--------------+---------------+
+
+
+------------------------------------------------------------
+Q3 - Avg order value by country EXPLAIN PLAN
+------------------------------------------------------------
+[Stage 13:>                                                         (0 + 1) / 4][Stage 13:==============>                                           (1 + 1) / 4][Stage 13:=============================>                            (2 + 1) / 4][Stage 13:===========================================>              (3 + 1) / 4]                                                                                [Stage 16:>                                                         (0 + 1) / 4][Stage 16:==============>                                           (1 + 1) / 4][Stage 16:=============================>                            (2 + 1) / 4][Stage 16:===========================================>              (3 + 1) / 4][Stage 18:>                                                         (0 + 1) / 1]                                                                                == Parsed Logical Plan ==
+'Sort ['avg_order_value DESC NULLS LAST], true
++- Aggregate [country#33], [country#33, round(avg(total_price_usd#50), 2) AS avg_order_value#975]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Analyzed Logical Plan ==
+country: string, avg_order_value: double
+Sort [avg_order_value#975 DESC NULLS LAST], true
++- Aggregate [country#33], [country#33, round(avg(total_price_usd#50), 2) AS avg_order_value#975]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [avg_order_value#975 DESC NULLS LAST], true
++- Aggregate [country#33], [country#33, round(avg(total_price_usd#50), 2) AS avg_order_value#975]
+   +- Project [country#33, total_price_usd#50]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [avg_order_value#975 DESC NULLS LAST], true, 0
+   +- Exchange rangepartitioning(avg_order_value#975 DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=217]
+      +- HashAggregate(keys=[country#33], functions=[avg(total_price_usd#50)], output=[country#33, avg_order_value#975])
+         +- Exchange hashpartitioning(country#33, 8), ENSURE_REQUIREMENTS, [plan_id=214]
+            +- HashAggregate(keys=[country#33], functions=[partial_avg(total_price_usd#50)], output=[country#33, sum#986, count#987L])
+               +- FileScan csv [country#33,total_price_usd#50] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<country:string,total_price_usd:double>
+
+
+============================================================
+Q4 - Orders by payment method RESULT
+============================================================
++--------------+-----------+
+|payment_method|order_count|
++--------------+-----------+
+|    Debit Card|     200805|
+| Bank Transfer|     200213|
+|        PayPal|     199881|
+|     Apple Pay|     199814|
+|   Credit Card|     199410|
++--------------+-----------+
+
+
+------------------------------------------------------------
+Q4 - Orders by payment method EXPLAIN PLAN
+------------------------------------------------------------
+== Parsed Logical Plan ==
+'Sort ['order_count DESC NULLS LAST], true
++- Aggregate [payment_method#55], [payment_method#55, count(1) AS order_count#1060L]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Analyzed Logical Plan ==
+payment_method: string, order_count: bigint
+Sort [order_count#1060L DESC NULLS LAST], true
++- Aggregate [payment_method#55], [payment_method#55, count(1) AS order_count#1060L]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [order_count#1060L DESC NULLS LAST], true
++- Aggregate [payment_method#55], [payment_method#55, count(1) AS order_count#1060L]
+   +- Project [payment_method#55]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [order_count#1060L DESC NULLS LAST], true, 0
+   +- Exchange rangepartitioning(order_count#1060L DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=282]
+      +- HashAggregate(keys=[payment_method#55], functions=[count(1)], output=[payment_method#55, order_count#1060L])
+         +- Exchange hashpartitioning(payment_method#55, 8), ENSURE_REQUIREMENTS, [plan_id=279]
+            +- HashAggregate(keys=[payment_method#55], functions=[partial_count(1)], output=[payment_method#55, count#1070L])
+               +- FileScan csv [payment_method#55] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<payment_method:string>
+
+
+============================================================
+Q5 - Max order per customer RESULT
+============================================================
++-----------+---------+
+|customer_id|max_order|
++-----------+---------+
+|  CUS-A9QVX|  2499.75|
+|  CUS-SF2Q8|  2499.45|
+|  CUS-WKXXV|   2499.2|
+|  CUS-LY7WI|  2499.15|
+|  CUS-ESEP9|  2498.95|
+|  CUS-8TUG3|   2498.8|
+|  CUS-F3THO|  2498.75|
+|  CUS-UR59J|  2498.45|
+|  CUS-9SBVR|   2497.8|
+|  CUS-1BE0M|   2497.6|
++-----------+---------+
+only showing top 10 rows
+
+
+------------------------------------------------------------
+Q5 - Max order per customer EXPLAIN PLAN
+------------------------------------------------------------
+[Stage 19:>                                                         (0 + 1) / 4][Stage 19:==============>                                           (1 + 1) / 4][Stage 19:=============================>                            (2 + 1) / 4][Stage 19:===========================================>              (3 + 1) / 4]                                                                                [Stage 22:>                                                         (0 + 1) / 4][Stage 22:==============>                                           (1 + 1) / 4][Stage 22:=============================>                            (2 + 1) / 4][Stage 22:===========================================>              (3 + 1) / 4]                                                                                == Parsed Logical Plan ==
+'Sort ['max_order DESC NULLS LAST], true
++- Aggregate [customer_id#28], [customer_id#28, max(total_price_usd#50) AS max_order#1138]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Analyzed Logical Plan ==
+customer_id: string, max_order: double
+Sort [max_order#1138 DESC NULLS LAST], true
++- Aggregate [customer_id#28], [customer_id#28, max(total_price_usd#50) AS max_order#1138]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [max_order#1138 DESC NULLS LAST], true
++- Aggregate [customer_id#28], [customer_id#28, max(total_price_usd#50) AS max_order#1138]
+   +- Project [customer_id#28, total_price_usd#50]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [max_order#1138 DESC NULLS LAST], true, 0
+   +- Exchange rangepartitioning(max_order#1138 DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=347]
+      +- HashAggregate(keys=[customer_id#28], functions=[max(total_price_usd#50)], output=[customer_id#28, max_order#1138])
+         +- Exchange hashpartitioning(customer_id#28, 8), ENSURE_REQUIREMENTS, [plan_id=344]
+            +- HashAggregate(keys=[customer_id#28], functions=[partial_max(total_price_usd#50)], output=[customer_id#28, max#1148])
+               +- FileScan csv [customer_id#28,total_price_usd#50] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<customer_id:string,total_price_usd:double>
+
+
+============================================================
+Q6 - Orders per month RESULT
+============================================================
++-------+-----------+
+|  month|order_count|
++-------+-----------+
+|2024-02|      37052|
+|2024-03|      42716|
+|2024-04|      41415|
+|2024-05|      42697|
+|2024-06|      40756|
+|2024-07|      42255|
+|2024-08|      42241|
+|2024-09|      41035|
+|2024-10|      42245|
+|2024-11|      40800|
+|2024-12|      42037|
+|2025-01|      42536|
+|2025-02|      38349|
+|2025-03|      42363|
+|2025-04|      41021|
+|2025-05|      42403|
+|2025-06|      40943|
+|2025-07|      42774|
+|2025-08|      42558|
+|2025-09|      40970|
+|2025-10|      42603|
+|2025-11|      40931|
+|2025-12|      42575|
+|2026-01|      42564|
++-------+-----------+
+only showing top 24 rows
+
+
+------------------------------------------------------------
+Q6 - Orders per month EXPLAIN PLAN
+------------------------------------------------------------
+== Parsed Logical Plan ==
+'Sort ['month ASC NULLS FIRST], true
++- Aggregate [month#1156], [month#1156, count(1) AS order_count#1284L]
+   +- Project [order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, category#40, ... 39 more fields]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Analyzed Logical Plan ==
+month: string, order_count: bigint
+Sort [month#1156 ASC NULLS FIRST], true
++- Aggregate [month#1156], [month#1156, count(1) AS order_count#1284L]
+   +- Project [order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, category#40, ... 39 more fields]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [month#1156 ASC NULLS FIRST], true
++- Aggregate [month#1156], [month#1156, count(1) AS order_count#1284L]
+   +- Project [date_format(order_date#18, yyyy-MM, Some(Africa/Cairo)) AS month#1156]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [month#1156 ASC NULLS FIRST], true, 0
+   +- Exchange rangepartitioning(month#1156 ASC NULLS FIRST, 8), ENSURE_REQUIREMENTS, [plan_id=421]
+      +- HashAggregate(keys=[month#1156], functions=[count(1)], output=[month#1156, order_count#1284L])
+         +- Exchange hashpartitioning(month#1156, 8), ENSURE_REQUIREMENTS, [plan_id=418]
+            +- HashAggregate(keys=[month#1156], functions=[partial_count(1)], output=[month#1156, count#1294L])
+               +- Project [date_format(order_date#18, yyyy-MM, Some(Africa/Cairo)) AS month#1156]
+                  +- FileScan csv [order_date#18] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<order_date:timestamp>
+
+
+============================================================
+Q7 - Revenue by category & country RESULT
+============================================================
++-----------+--------------+-------------+
+|   category|       country|      revenue|
++-----------+--------------+-------------+
+|Electronics|   Netherlands|1.416504796E7|
+|Electronics|         Italy|1.410976446E7|
+|Electronics|       Belgium|1.406366308E7|
+|Electronics|         Spain|1.400882483E7|
+|Electronics|United Kingdom|1.400408099E7|
+|Electronics|        Canada|1.397057633E7|
+|Electronics| United States|1.396531785E7|
+|Electronics|     Australia|1.395247316E7|
+|Electronics|       Germany|1.387607852E7|
+|Electronics|        France|1.375015976E7|
++-----------+--------------+-------------+
+only showing top 10 rows
+
+
+------------------------------------------------------------
+Q7 - Revenue by category & country EXPLAIN PLAN
+------------------------------------------------------------
+[Stage 25:>                                                         (0 + 1) / 4][Stage 25:>                                                         (0 + 2) / 4][Stage 25:==============>                                           (1 + 1) / 4][Stage 25:=============================>                            (2 + 1) / 4][Stage 25:===========================================>              (3 + 1) / 4][Stage 27:>                                                         (0 + 1) / 1]                                                                                [Stage 31:>                                                         (0 + 1) / 4][Stage 31:==============>                                           (1 + 1) / 4][Stage 31:=============================>                            (2 + 1) / 4][Stage 31:===========================================>              (3 + 1) / 4][Stage 33:>                                                         (0 + 1) / 1]                                                                                == Parsed Logical Plan ==
+'Sort ['revenue DESC NULLS LAST], true
++- Aggregate [category#40, country#33], [category#40, country#33, round(sum(total_price_usd#50), 2) AS revenue#1362]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Analyzed Logical Plan ==
+category: string, country: string, revenue: double
+Sort [revenue#1362 DESC NULLS LAST], true
++- Aggregate [category#40, country#33], [category#40, country#33, round(sum(total_price_usd#50), 2) AS revenue#1362]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [revenue#1362 DESC NULLS LAST], true
++- Aggregate [category#40, country#33], [category#40, country#33, round(sum(total_price_usd#50), 2) AS revenue#1362]
+   +- Project [country#33, category#40, total_price_usd#50]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [revenue#1362 DESC NULLS LAST], true, 0
+   +- Exchange rangepartitioning(revenue#1362 DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=486]
+      +- HashAggregate(keys=[category#40, country#33], functions=[sum(total_price_usd#50)], output=[category#40, country#33, revenue#1362])
+         +- Exchange hashpartitioning(category#40, country#33, 8), ENSURE_REQUIREMENTS, [plan_id=483]
+            +- HashAggregate(keys=[category#40, country#33], functions=[partial_sum(total_price_usd#50)], output=[category#40, country#33, sum#1376])
+               +- FileScan csv [country#33,category#40,total_price_usd#50] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<country:string,category:string,total_price_usd:double>
+
+
+============================================================
+Q8 - Distinct products per category RESULT
+============================================================
++-----------+-----------------+
+|   category|distinct_products|
++-----------+-----------------+
+|     Sports|           189088|
+|       Home|           189059|
+|Electronics|           188408|
+|   Clothing|           188183|
+|     Health|           188127|
++-----------+-----------------+
+
+
+------------------------------------------------------------
+Q8 - Distinct products per category EXPLAIN PLAN
+------------------------------------------------------------
+== Parsed Logical Plan ==
+'Sort ['distinct_products DESC NULLS LAST], true
++- Aggregate [category#40], [category#40, count(distinct product_id#38) AS distinct_products#1448L]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Analyzed Logical Plan ==
+category: string, distinct_products: bigint
+Sort [distinct_products#1448L DESC NULLS LAST], true
++- Aggregate [category#40], [category#40, count(distinct product_id#38) AS distinct_products#1448L]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [distinct_products#1448L DESC NULLS LAST], true
++- Aggregate [category#40], [category#40, count(distinct product_id#38) AS distinct_products#1448L]
+   +- Project [product_id#38, category#40]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [distinct_products#1448L DESC NULLS LAST], true, 0
+   +- Exchange rangepartitioning(distinct_products#1448L DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=617]
+      +- HashAggregate(keys=[category#40], functions=[count(distinct product_id#38)], output=[category#40, distinct_products#1448L])
+         +- Exchange hashpartitioning(category#40, 8), ENSURE_REQUIREMENTS, [plan_id=614]
+            +- HashAggregate(keys=[category#40], functions=[partial_count(distinct product_id#38)], output=[category#40, count#1460L])
+               +- HashAggregate(keys=[category#40, product_id#38], functions=[], output=[category#40, product_id#38])
+                  +- Exchange hashpartitioning(category#40, product_id#38, 8), ENSURE_REQUIREMENTS, [plan_id=610]
+                     +- HashAggregate(keys=[category#40, product_id#38], functions=[], output=[category#40, product_id#38])
+                        +- FileScan csv [product_id#38,category#40] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<product_id:string,category:string>
+
+
+============================================================
+Q9 - Cumulative revenue (window) RESULT
+============================================================
++--------------------+---------------+------------------+
+|          order_date|total_price_usd|cumulative_revenue|
++--------------------+---------------+------------------+
+|2024-02-03 04:31:...|         496.32|            496.32|
+|2024-02-03 04:33:...|          92.38|             588.7|
+|2024-02-03 04:34:...|        1191.02|           1779.72|
+|2024-02-03 04:34:...|         197.17|           1976.89|
+|2024-02-03 04:35:...|           53.1|           2029.99|
+|2024-02-03 04:36:...|         471.62|           2501.61|
+|2024-02-03 04:37:...|         308.22|           2809.83|
+|2024-02-03 04:37:...|          91.47|2901.2999999999997|
+|2024-02-03 04:37:...|         422.65|           3323.95|
+|2024-02-03 04:40:...|         400.22|           3724.17|
++--------------------+---------------+------------------+
+only showing top 10 rows
+
+
+------------------------------------------------------------
+Q9 - Cumulative revenue (window) EXPLAIN PLAN
+------------------------------------------------------------
+[Stage 34:>                                                         (0 + 1) / 4][Stage 34:==============>                                           (1 + 1) / 4][Stage 34:=============================>                            (2 + 1) / 4][Stage 34:===========================================>              (3 + 1) / 4][Stage 36:>                                                         (0 + 1) / 1]                                                                                [Stage 40:>                                                         (0 + 1) / 4][Stage 40:==============>                                           (1 + 1) / 4][Stage 40:=============================>                            (2 + 1) / 4][Stage 40:===========================================>              (3 + 1) / 4][Stage 42:>                                                         (0 + 1) / 1]                                                                                == Parsed Logical Plan ==
+'Project ['order_date, 'total_price_usd, 'cumulative_revenue]
++- Project [order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, category#40, ... 39 more fields]
+   +- Project [order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, category#40, ... 40 more fields]
+      +- Window [sum(total_price_usd#50) windowspecdefinition(order_date#18 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS cumulative_revenue#1473], [order_date#18 ASC NULLS FIRST]
+         +- Project [order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, category#40, ... 38 more fields]
+            +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Analyzed Logical Plan ==
+order_date: timestamp, total_price_usd: double, cumulative_revenue: double
+Project [order_date#18, total_price_usd#50, cumulative_revenue#1473]
++- Project [order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, category#40, ... 39 more fields]
+   +- Project [order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, category#40, ... 40 more fields]
+      +- Window [sum(total_price_usd#50) windowspecdefinition(order_date#18 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS cumulative_revenue#1473], [order_date#18 ASC NULLS FIRST]
+         +- Project [order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, category#40, ... 38 more fields]
+            +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Window [sum(total_price_usd#50) windowspecdefinition(order_date#18 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS cumulative_revenue#1473], [order_date#18 ASC NULLS FIRST]
++- Project [order_date#18, total_price_usd#50]
+   +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Window [sum(total_price_usd#50) windowspecdefinition(order_date#18 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS cumulative_revenue#1473], [order_date#18 ASC NULLS FIRST]
+   +- Sort [order_date#18 ASC NULLS FIRST], false, 0
+      +- Exchange SinglePartition, ENSURE_REQUIREMENTS, [plan_id=675]
+         +- FileScan csv [order_date#18,total_price_usd#50] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<order_date:timestamp,total_price_usd:double>
+
+
+Q10 Average Spend: 406.56
+
+============================================================
+Q10 - High-value customers RESULT
+============================================================
++-----------+------------------+
+|customer_id|       total_spend|
++-----------+------------------+
+|  CUS-CSPL3|           4267.91|
+|  CUS-WXS3A|4043.9300000000003|
+|  CUS-DK6O9|            3888.2|
+|  CUS-A67K3|           3735.48|
+|  CUS-P1DO3|3542.4300000000003|
+|  CUS-5XVL1|            3506.8|
+|  CUS-96P9R|           3495.37|
+|  CUS-Q9X3X|3467.6400000000003|
+|  CUS-A2OPJ|           3422.48|
+|  CUS-V010N|3334.0200000000004|
++-----------+------------------+
+only showing top 10 rows
+
+
+------------------------------------------------------------
+Q10 - High-value customers EXPLAIN PLAN
+------------------------------------------------------------
+== Parsed Logical Plan ==
+'Sort ['total_spend DESC NULLS LAST], true
++- Filter (total_spend#1619 > 406.5607034664071)
+   +- Aggregate [customer_id#28], [customer_id#28, sum(total_price_usd#50) AS total_spend#1619]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Analyzed Logical Plan ==
+customer_id: string, total_spend: double
+Sort [total_spend#1619 DESC NULLS LAST], true
++- Filter (total_spend#1619 > 406.5607034664071)
+   +- Aggregate [customer_id#28], [customer_id#28, sum(total_price_usd#50) AS total_spend#1619]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [total_spend#1619 DESC NULLS LAST], true
++- Filter (isnotnull(total_spend#1619) AND (total_spend#1619 > 406.5607034664071))
+   +- Aggregate [customer_id#28], [customer_id#28, sum(total_price_usd#50) AS total_spend#1619]
+      +- Project [customer_id#28, total_price_usd#50]
+         +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [total_spend#1619 DESC NULLS LAST], true, 0
+   +- Exchange rangepartitioning(total_spend#1619 DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=842]
+      +- Filter (isnotnull(total_spend#1619) AND (total_spend#1619 > 406.5607034664071))
+         +- HashAggregate(keys=[customer_id#28], functions=[sum(total_price_usd#50)], output=[customer_id#28, total_spend#1619])
+            +- Exchange hashpartitioning(customer_id#28, 8), ENSURE_REQUIREMENTS, [plan_id=838]
+               +- HashAggregate(keys=[customer_id#28], functions=[partial_sum(total_price_usd#50)], output=[customer_id#28, sum#1632])
+                  +- FileScan csv [customer_id#28,total_price_usd#50] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<customer_id:string,total_price_usd:double>
+
+
+All DataFrame timings saved.
