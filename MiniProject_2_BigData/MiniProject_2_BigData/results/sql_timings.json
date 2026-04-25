@@ -1,0 +1,12 @@
+{
+  "Q1 - Filter Completed > 500": 10.611564874649048,
+  "Q2 - Revenue by cateSgory": 11.072360038757324,
+  "Q3 - Avg order value by country": 9.799895286560059,
+  "Q4 - Orders by payment method": 11.978293180465698,
+  "Q5 - Max order per customer": 17.664790630340576,
+  "Q6 - Orders per month": 11.505789995193481,
+  "Q7 - Revenue by category & country": 13.89284610748291,
+  "Q8 - Distinct products per category": 31.7609920501709,
+  "Q9 - Window function ranking": 24.025547981262207,
+  "Q10 - High-value customers (subquery)": 28.861737728118896
+}

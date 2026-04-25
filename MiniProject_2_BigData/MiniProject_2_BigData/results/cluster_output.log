@@ -1,0 +1,9 @@
+26/04/25 14:33:16 WARN Utils: Your hostname, yousef-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+26/04/25 14:33:16 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/04/25 14:33:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+=== CLUSTER CONFIGURATION ===
+Shuffle Partitions: 8
+Driver Memory: 2g

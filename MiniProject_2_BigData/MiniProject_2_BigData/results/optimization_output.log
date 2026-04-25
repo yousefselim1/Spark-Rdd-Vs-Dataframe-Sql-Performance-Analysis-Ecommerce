@@ -1,0 +1,272 @@
+26/04/24 01:38:27 WARN Utils: Your hostname, yousef-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+26/04/24 01:38:28 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/04/24 01:38:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 1) / 4][Stage 1:==============>                                            (1 + 1) / 4][Stage 1:=============================>                             (2 + 1) / 4][Stage 1:=============================>                             (2 + 2) / 4][Stage 1:============================================>              (3 + 1) / 4]                                                                                [Stage 2:>                                                          (0 + 1) / 4][Stage 2:==============>                                            (1 + 1) / 4][Stage 2:=============================>                             (2 + 1) / 4][Stage 2:============================================>              (3 + 1) / 4]                                                                                [Stage 5:>                                                          (0 + 1) / 1]                                                                                
+=== SCHEMA ===
+root
+ |-- order_id: string (nullable = true)
+ |-- order_date: timestamp (nullable = true)
+ |-- order_year: integer (nullable = true)
+ |-- order_month: integer (nullable = true)
+ |-- order_day: integer (nullable = true)
+ |-- order_hour: integer (nullable = true)
+ |-- order_minute: integer (nullable = true)
+ |-- order_second: integer (nullable = true)
+ |-- is_weekend: string (nullable = true)
+ |-- order_status: string (nullable = true)
+ |-- return_reason: string (nullable = true)
+ |-- customer_id: string (nullable = true)
+ |-- customer_name: string (nullable = true)
+ |-- gender: string (nullable = true)
+ |-- age: integer (nullable = true)
+ |-- customer_segment: string (nullable = true)
+ |-- country: string (nullable = true)
+ |-- city: string (nullable = true)
+ |-- customer_loyalty_score: double (nullable = true)
+ |-- total_orders_by_customer: integer (nullable = true)
+ |-- account_creation_date: date (nullable = true)
+ |-- product_id: string (nullable = true)
+ |-- product_name: string (nullable = true)
+ |-- category: string (nullable = true)
+ |-- sub_category: string (nullable = true)
+ |-- brand: string (nullable = true)
+ |-- product_rating_avg: double (nullable = true)
+ |-- product_reviews_count: integer (nullable = true)
+ |-- stock_quantity: integer (nullable = true)
+ |-- unit_price_usd: double (nullable = true)
+ |-- quantity: integer (nullable = true)
+ |-- discount_percent: integer (nullable = true)
+ |-- discount_amount_usd: double (nullable = true)
+ |-- total_price_usd: double (nullable = true)
+ |-- cost_usd: double (nullable = true)
+ |-- profit_usd: double (nullable = true)
+ |-- tax_usd: double (nullable = true)
+ |-- currency: string (nullable = true)
+ |-- payment_method: string (nullable = true)
+ |-- payment_status: string (nullable = true)
+ |-- installment_plan: string (nullable = true)
+ |-- shipping_method: string (nullable = true)
+ |-- shipping_cost_usd: double (nullable = true)
+ |-- delivery_days: integer (nullable = true)
+ |-- shipping_country: string (nullable = true)
+ |-- warehouse_location: string (nullable = true)
+ |-- delivery_status: string (nullable = true)
+ |-- rating: integer (nullable = true)
+ |-- review_sentiment: string (nullable = true)
+ |-- customer_feedback: string (nullable = true)
+ |-- coupon_used: string (nullable = true)
+ |-- coupon_code: string (nullable = true)
+ |-- campaign_source: string (nullable = true)
+ |-- device_type: string (nullable = true)
+ |-- traffic_source: string (nullable = true)
+ |-- session_duration_minutes: double (nullable = true)
+ |-- pages_visited: integer (nullable = true)
+ |-- abandoned_cart_before: string (nullable = true)
+ |-- fraud_risk_score: double (nullable = true)
+ |-- profit_margin_percent: double (nullable = true)
+ |-- order_priority: string (nullable = true)
+ |-- support_ticket_created: string (nullable = true)
+
+
+=== TOTAL RECORDS ===
+1000123
+
+=== SAMPLE DATA ===
++---------+--------------------+----------+-----------+---------+----------+------------+------------+----------+------------+-------------+-----------+---------------+------+---+----------------+-------------+-----------+----------------------+------------------------+---------------------+----------+--------------------+-----------+------------+------+------------------+---------------------+--------------+--------------+--------+----------------+-------------------+---------------+--------+----------+-------+--------+--------------+--------------+----------------+---------------+-----------------+-------------+----------------+------------------+---------------+------+----------------+--------------------+-----------+-----------+---------------+-----------+--------------+------------------------+-------------+---------------------+----------------+---------------------+--------------+----------------------+
+| order_id|          order_date|order_year|order_month|order_day|order_hour|order_minute|order_second|is_weekend|order_status|return_reason|customer_id|  customer_name|gender|age|customer_segment|      country|       city|customer_loyalty_score|total_orders_by_customer|account_creation_date|product_id|        product_name|   category|sub_category| brand|product_rating_avg|product_reviews_count|stock_quantity|unit_price_usd|quantity|discount_percent|discount_amount_usd|total_price_usd|cost_usd|profit_usd|tax_usd|currency|payment_method|payment_status|installment_plan|shipping_method|shipping_cost_usd|delivery_days|shipping_country|warehouse_location|delivery_status|rating|review_sentiment|   customer_feedback|coupon_used|coupon_code|campaign_source|device_type|traffic_source|session_duration_minutes|pages_visited|abandoned_cart_before|fraud_risk_score|profit_margin_percent|order_priority|support_ticket_created|
++---------+--------------------+----------+-----------+---------+----------+------------+------------+----------+------------+-------------+-----------+---------------+------+---+----------------+-------------+-----------+----------------------+------------------------+---------------------+----------+--------------------+-----------+------------+------+------------------+---------------------+--------------+--------------+--------+----------------+-------------------+---------------+--------+----------+-------+--------+--------------+--------------+----------------+---------------+-----------------+-------------+----------------+------------------+---------------+------+----------------+--------------------+-----------+-----------+---------------+-----------+--------------+------------------------+-------------+---------------------+----------------+---------------------+--------------+----------------------+
+|ORD-XAJI0|2024-10-14 11:20:...|      2024|         10|       14|        11|          20|           5|        No|   Completed|         NULL|  CUS-6DPBH|    Drew Warren|  Male| 53|         Regular|  Netherlands|    Utrecht|                  22.0|                      38|           2022-04-23|  PRD-1FPK|Coffee Maker Auto...|       Home|     Kitchen|  Nike|               3.2|                 3112|            99|        120.51|       3|              10|              36.15|         325.38|  232.14|     93.24|  28.14|     USD|     Apple Pay|          Paid|              No|        Economy|             1.97|            5|     Netherlands|                UK|     In Transit|     3|         Neutral|                NULL|        Yes|    CPN-ZBI|          Email|     Mobile|        Search|                    52.1|           13|                   No|            45.3|                28.66|        Medium|                   Yes|
+|ORD-NHJ7X|2024-10-21 00:49:...|      2024|         10|       21|         0|          49|          44|        No|   Completed|         NULL|  CUS-G0FN9|Victor Sullivan|  Male| 61|         Regular|United States|Los Angeles|                  82.2|                      21|           2022-08-22|  PRD-C6UZ|   Yoga Mat Non-Slip|     Health| Supplements|  Asus|               3.8|                 3758|           146|         60.33|       2|              15|               18.1|         102.56|   67.78|     34.78|   8.96|     USD| Bank Transfer|          Paid|             Yes|       Next Day|             5.48|            3|   United States|                UK|      Delivered|     1|        Negative|Good value for money|        Yes|    CPN-W2P|     Google Ads|    Desktop|      Referral|                    36.2|           15|                   No|            97.1|                33.91|           Low|                   Yes|
+|ORD-YTJXE|2025-03-17 19:49:...|      2025|          3|       17|        19|          49|          36|        No|   Completed|         NULL|  CUS-Q85JS|   Jason Garcia|  Male| 50|             VIP|       France|       Nice|                  60.9|                      10|           2024-08-04|  PRD-T2TA|       Blender 1000W|       Home|   Furniture|  Asus|               3.0|                 2973|           899|        295.89|       3|               0|                0.0|         887.67|  419.22|    468.45|  69.56|     USD|   Credit Card|          Paid|              No|        Economy|             20.4|           13|          France|                UK|     In Transit|     2|        Negative|  Highly recommended|        Yes|    CPN-J5P|       Facebook|     Tablet|        Search|                    43.1|           13|                   No|            43.8|                52.77|          High|                    No|
+|ORD-EIMVI|2024-09-27 06:24:...|      2024|          9|       27|         6|          24|          44|        No|   Completed|         NULL|  CUS-CWI64|   David Norris|  Male| 50|         Regular|        Italy|      Milan|                  53.9|                      47|           2023-08-06|  PRD-IROD|    Badminton Racket|     Sports| Accessories|Adidas|               3.8|                 3825|           884|        186.33|       1|               0|                0.0|         186.33|  115.24|     71.09|  16.78|     USD|   Credit Card|          Paid|              No|        Express|             4.76|            8|           Italy|          USA-West|      Delivered|     3|         Neutral|  Highly recommended|        Yes|    CPN-5C3|      Instagram|     Mobile|        Direct|                    39.5|           18|                  Yes|            96.9|                38.15|           Low|                   Yes|
+|ORD-OR56F|2025-05-21 17:10:...|      2025|          5|       21|        17|          10|          48|        No|   Completed|         NULL|  CUS-O72KZ| Laura Phillips|Female| 27|         Regular|      Germany|     Berlin|                  57.9|                      35|           2023-01-02|  PRD-LBR7|Screen Protector ...|Electronics|     Cameras| Anker|               3.1|                 4160|            82|        427.16|       1|              10|              42.72|         384.44|  257.39|    127.05|  23.74|     USD|   Credit Card|          Paid|              No|       Standard|            15.48|            7|         Germany|                UK|      Delivered|     3|         Neutral|     Average quality|        Yes|    CPN-YLJ|       Facebook|     Tablet|        Social|                    28.0|            3|                  Yes|            45.8|                33.05|          High|                   Yes|
++---------+--------------------+----------+-----------+---------+----------+------------+------------+----------+------------+-------------+-----------+---------------+------+---+----------------+-------------+-----------+----------------------+------------------------+---------------------+----------+--------------------+-----------+------------+------+------------------+---------------------+--------------+--------------+--------+----------------+-------------------+---------------+--------+----------+-------+--------+--------------+--------------+----------------+---------------+-----------------+-------------+----------------+------------------+---------------+------+----------------+--------------------+-----------+-----------+---------------+-----------+--------------+------------------------+-------------+---------------------+----------------+---------------------+--------------+----------------------+
+only showing top 5 rows
+[Stage 6:>                                                          (0 + 1) / 1]                                                                                [Stage 7:>                                                          (0 + 1) / 4][Stage 7:==============>                                            (1 + 1) / 4][Stage 7:=============================>                             (2 + 1) / 4][Stage 7:============================================>              (3 + 1) / 4]                                                                                [Stage 10:>                 (0 + 1) / 4][Stage 11:>                 (0 + 0) / 1][Stage 10:====>             (1 + 1) / 4][Stage 11:>                 (0 + 0) / 1][Stage 10:=========>        (2 + 1) / 4][Stage 11:>                 (0 + 0) / 1][Stage 10:=============>    (3 + 1) / 4][Stage 11:>                 (0 + 0) / 1][Stage 11:>                                                         (0 + 1) / 1][Stage 14:>                                                         (0 + 1) / 1]                                                                                
+
+============================================================
+JOIN OPTIMIZATION: Broadcast Join vs Sort-Merge Join
+============================================================
+
+Broadcast Join count: 1000123
+=== BROADCAST JOIN EXPLAIN ===
+== Parsed Logical Plan ==
+'Project [category#40, order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, ... 40 more fields]
++- Project [category#40, order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, ... 39 more fields]
+   +- Join LeftOuter, (category#40 = category#520)
+      :- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+      +- ResolvedHint (strategy=broadcast)
+         +- LogicalRDD [category#520, discount_rate#521], false
+
+== Analyzed Logical Plan ==
+category: string, order_id: string, order_date: timestamp, order_year: int, order_month: int, order_day: int, order_hour: int, order_minute: int, order_second: int, is_weekend: string, order_status: string, return_reason: string, customer_id: string, customer_name: string, gender: string, age: int, customer_segment: string, country: string, city: string, customer_loyalty_score: double, total_orders_by_customer: int, account_creation_date: date, product_id: string, product_name: string, ... 40 more fields
+Project [category#40, order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, ... 40 more fields]
++- Project [category#40, order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, ... 39 more fields]
+   +- Join LeftOuter, (category#40 = category#520)
+      :- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+      +- ResolvedHint (strategy=broadcast)
+         +- LogicalRDD [category#520, discount_rate#521], false
+
+== Optimized Logical Plan ==
+Project [category#40, order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, ... 40 more fields]
++- Join LeftOuter, (category#40 = category#520), rightHint=(strategy=broadcast)
+   :- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+   +- Filter isnotnull(category#520)
+      +- LogicalRDD [category#520, discount_rate#521], false
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Project [category#40, order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, ... 40 more fields]
+   +- BroadcastHashJoin [category#40], [category#520], LeftOuter, BuildRight, false
+      :- FileScan csv [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<order_id:string,order_date:timestamp,order_year:int,order_month:int,order_day:int,order_ho...
+      +- BroadcastExchange HashedRelationBroadcastMode(List(input[0, string, false]),false), [plan_id=190]
+         +- Filter isnotnull(category#520)
+            +- Scan ExistingRDD[category#520,discount_rate#521]
+
+
+Sort-Merge Join count: 1000123
+=== SORT-MERGE JOIN EXPLAIN ===
+[Stage 19:>                                                         (0 + 1) / 4][Stage 19:==============>                                           (1 + 1) / 4][Stage 19:=============================>                            (2 + 1) / 4][Stage 19:===========================================>              (3 + 1) / 4]                                                                                [Stage 22:>                                                         (0 + 1) / 4][Stage 22:==============>                                           (1 + 1) / 4][Stage 22:=============================>                            (2 + 1) / 4]                                                                                [Stage 25:>                                                         (0 + 1) / 4][Stage 25:==============>                                           (1 + 1) / 4][Stage 25:=============================>                            (2 + 1) / 4][Stage 25:===========================================>              (3 + 1) / 4]                                                                                [Stage 29:>                                                         (0 + 1) / 4][Stage 29:==============>                                           (1 + 1) / 4][Stage 29:=============================>                            (2 + 1) / 4]                                                                                [Stage 32:===========================================>              (3 + 1) / 4]                                                                                [Stage 35:>                                                         (0 + 1) / 4][Stage 35:==============>                                           (1 + 1) / 4][Stage 35:=============================>                            (2 + 1) / 4]                                                                                [Stage 38:>                                                         (0 + 1) / 4][Stage 38:==============>                                           (1 + 1) / 4][Stage 38:=============================>                            (2 + 1) / 4][Stage 38:===========================================>              (3 + 1) / 4]                                                                                [Stage 44:===>                                                     (1 + 1) / 15][Stage 44:===========>                                             (3 + 1) / 15][Stage 44:===================>                                     (5 + 1) / 15][Stage 44:======================>                                  (6 + 1) / 15][Stage 44:============================================>           (12 + 1) / 15]                                                                                == Parsed Logical Plan ==
+'Project [category#40, order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, ... 40 more fields]
++- Project [category#40, order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, ... 39 more fields]
+   +- Join LeftOuter, (category#40 = category#520)
+      :- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+      +- LogicalRDD [category#520, discount_rate#521], false
+
+== Analyzed Logical Plan ==
+category: string, order_id: string, order_date: timestamp, order_year: int, order_month: int, order_day: int, order_hour: int, order_minute: int, order_second: int, is_weekend: string, order_status: string, return_reason: string, customer_id: string, customer_name: string, gender: string, age: int, customer_segment: string, country: string, city: string, customer_loyalty_score: double, total_orders_by_customer: int, account_creation_date: date, product_id: string, product_name: string, ... 40 more fields
+Project [category#40, order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, ... 40 more fields]
++- Project [category#40, order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, ... 39 more fields]
+   +- Join LeftOuter, (category#40 = category#520)
+      :- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+      +- LogicalRDD [category#520, discount_rate#521], false
+
+== Optimized Logical Plan ==
+Project [category#40, order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, ... 40 more fields]
++- Join LeftOuter, (category#40 = category#520)
+   :- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+   +- Filter isnotnull(category#520)
+      +- LogicalRDD [category#520, discount_rate#521], false
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Project [category#40, order_id#17, order_date#18, order_year#19, order_month#20, order_day#21, order_hour#22, order_minute#23, order_second#24, is_weekend#25, order_status#26, return_reason#27, customer_id#28, customer_name#29, gender#30, age#31, customer_segment#32, country#33, city#34, customer_loyalty_score#35, total_orders_by_customer#36, account_creation_date#37, product_id#38, product_name#39, ... 40 more fields]
+   +- SortMergeJoin [category#40], [category#520], LeftOuter
+      :- Sort [category#40 ASC NULLS FIRST], false, 0
+      :  +- Exchange hashpartitioning(category#40, 8), ENSURE_REQUIREMENTS, [plan_id=392]
+      :     +- FileScan csv [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<order_id:string,order_date:timestamp,order_year:int,order_month:int,order_day:int,order_ho...
+      +- Sort [category#520 ASC NULLS FIRST], false, 0
+         +- Exchange hashpartitioning(category#520, 8), ENSURE_REQUIREMENTS, [plan_id=393]
+            +- Filter isnotnull(category#520)
+               +- Scan ExistingRDD[category#520,discount_rate#521]
+
+
+--- JOIN PERFORMANCE COMPARISON ---
+  broadcast_join_time: 11.128s
+  sort_merge_join_time: 11.454s
+
+============================================================
+CACHING: With Cache vs Without Cache
+============================================================
++-----------+--------------------+
+|   category|sum(total_price_usd)|
++-----------+--------------------+
+|       Home| 8.782867775999954E7|
+|     Health|5.7467925550000004E7|
+|Electronics|1.3986598694000006E8|
+|     Sports| 7.291747085000001E7|
+|   Clothing| 4.520579590000001E7|
++-----------+--------------------+
+
++-----------+--------+
+|   category|count(1)|
++-----------+--------+
+|       Home|  200589|
+|     Health|  199574|
+|Electronics|  200019|
+|     Sports|  200397|
+|   Clothing|  199544|
++-----------+--------+
+
++-----------+--------------------+
+|   category|sum(total_price_usd)|
++-----------+--------------------+
+|       Home| 8.782867775999954E7|
+|     Health|5.7467925550000004E7|
+|Electronics|1.3986598694000006E8|
+|     Sports| 7.291747085000001E7|
+|   Clothing| 4.520579590000001E7|
++-----------+--------------------+
+
++-----------+--------+
+|   category|count(1)|
++-----------+--------+
+|       Home|  200589|
+|     Health|  199574|
+|Electronics|  200019|
+|     Sports|  200397|
+|   Clothing|  199544|
++-----------+--------+
+
+
+============================================================
+PARTITIONING: Impact on Query Performance
+============================================================
++--------------+--------------------+
+|       country|sum(total_price_usd)|
++--------------+--------------------+
+|     Australia|4.0331338920000106E7|
+| United States| 4.023669859999991E7|
+|United Kingdom| 4.034049741999993E7|
+|   Netherlands| 4.054504649000018E7|
+|         Italy| 4.047603399999995E7|
+|       Belgium| 4.041667991999994E7|
+|         Spain| 4.037728950999999E7|
+|        France| 4.023041559999984E7|
+|       Germany| 4.012906336000008E7|
+|        Canada| 4.020279318000002E7|
++--------------+--------------------+
+
+[Stage 45:>                                                         (0 + 1) / 1]                                                                                [Stage 46:>                                                         (0 + 1) / 1]                                                                                [Stage 50:>                                                         (0 + 1) / 4][Stage 50:==============>                                           (1 + 1) / 4][Stage 50:=============================>                            (2 + 1) / 4][Stage 50:===========================================>              (3 + 1) / 4]                                                                                [Stage 51:>                                                         (0 + 1) / 4][Stage 51:==============>                                           (1 + 1) / 4][Stage 51:=============================>                            (2 + 1) / 4][Stage 51:===========================================>              (3 + 1) / 4]                                                                                +--------------+--------------------+
+|       country|sum(total_price_usd)|
++--------------+--------------------+
+|       Germany|   4.0129063359999E7|
+|       Belgium| 4.041667992000048E7|
+|         Spain| 4.037728950999957E7|
+|        France| 4.023041560000009E7|
+|        Canada| 4.020279317999988E7|
+|United Kingdom| 4.034049742000009E7|
+|     Australia| 4.033133892000024E7|
+|   Netherlands| 4.054504648999942E7|
+|         Italy| 4.047603399999975E7|
+| United States|4.0236698600000024E7|
++--------------+--------------------+
+
+
+============================================================
+FILE FORMAT: CSV vs Parquet
+============================================================
++-----------+--------------------+
+|   category|sum(total_price_usd)|
++-----------+--------------------+
+|       Home|  8.78286777599993E7|
+|     Health| 5.746792554999926E7|
+|Electronics|1.3986598693999696E8|
+|     Sports| 7.291747084999952E7|
+|   Clothing| 4.520579589999961E7|
++-----------+--------------------+
+
++-----------+--------------------+
+|   category|sum(total_price_usd)|
++-----------+--------------------+
+|       Home| 8.782867775999954E7|
+|     Health|5.7467925550000004E7|
+|Electronics|1.3986598694000006E8|
+|     Sports| 7.291747085000001E7|
+|   Clothing| 4.520579590000001E7|
++-----------+--------------------+
+
+
+Optimization timings saved.

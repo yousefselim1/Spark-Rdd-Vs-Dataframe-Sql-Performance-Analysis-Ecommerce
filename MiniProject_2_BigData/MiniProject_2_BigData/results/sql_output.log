@@ -1,0 +1,661 @@
+26/04/24 19:35:03 WARN Utils: Your hostname, yousef-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+26/04/24 19:35:03 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/04/24 19:35:05 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 1) / 4][Stage 1:==============>                                            (1 + 1) / 4][Stage 1:=============================>                             (2 + 1) / 4][Stage 1:============================================>              (3 + 1) / 4]                                                                                [Stage 2:>                                                          (0 + 1) / 4][Stage 2:==============>                                            (1 + 1) / 4][Stage 2:=============================>                             (2 + 1) / 4][Stage 2:============================================>              (3 + 1) / 4]                                                                                [Stage 5:>                                                          (0 + 1) / 1]                                                                                
+=== SCHEMA ===
+root
+ |-- order_id: string (nullable = true)
+ |-- order_date: timestamp (nullable = true)
+ |-- order_year: integer (nullable = true)
+ |-- order_month: integer (nullable = true)
+ |-- order_day: integer (nullable = true)
+ |-- order_hour: integer (nullable = true)
+ |-- order_minute: integer (nullable = true)
+ |-- order_second: integer (nullable = true)
+ |-- is_weekend: string (nullable = true)
+ |-- order_status: string (nullable = true)
+ |-- return_reason: string (nullable = true)
+ |-- customer_id: string (nullable = true)
+ |-- customer_name: string (nullable = true)
+ |-- gender: string (nullable = true)
+ |-- age: integer (nullable = true)
+ |-- customer_segment: string (nullable = true)
+ |-- country: string (nullable = true)
+ |-- city: string (nullable = true)
+ |-- customer_loyalty_score: double (nullable = true)
+ |-- total_orders_by_customer: integer (nullable = true)
+ |-- account_creation_date: date (nullable = true)
+ |-- product_id: string (nullable = true)
+ |-- product_name: string (nullable = true)
+ |-- category: string (nullable = true)
+ |-- sub_category: string (nullable = true)
+ |-- brand: string (nullable = true)
+ |-- product_rating_avg: double (nullable = true)
+ |-- product_reviews_count: integer (nullable = true)
+ |-- stock_quantity: integer (nullable = true)
+ |-- unit_price_usd: double (nullable = true)
+ |-- quantity: integer (nullable = true)
+ |-- discount_percent: integer (nullable = true)
+ |-- discount_amount_usd: double (nullable = true)
+ |-- total_price_usd: double (nullable = true)
+ |-- cost_usd: double (nullable = true)
+ |-- profit_usd: double (nullable = true)
+ |-- tax_usd: double (nullable = true)
+ |-- currency: string (nullable = true)
+ |-- payment_method: string (nullable = true)
+ |-- payment_status: string (nullable = true)
+ |-- installment_plan: string (nullable = true)
+ |-- shipping_method: string (nullable = true)
+ |-- shipping_cost_usd: double (nullable = true)
+ |-- delivery_days: integer (nullable = true)
+ |-- shipping_country: string (nullable = true)
+ |-- warehouse_location: string (nullable = true)
+ |-- delivery_status: string (nullable = true)
+ |-- rating: integer (nullable = true)
+ |-- review_sentiment: string (nullable = true)
+ |-- customer_feedback: string (nullable = true)
+ |-- coupon_used: string (nullable = true)
+ |-- coupon_code: string (nullable = true)
+ |-- campaign_source: string (nullable = true)
+ |-- device_type: string (nullable = true)
+ |-- traffic_source: string (nullable = true)
+ |-- session_duration_minutes: double (nullable = true)
+ |-- pages_visited: integer (nullable = true)
+ |-- abandoned_cart_before: string (nullable = true)
+ |-- fraud_risk_score: double (nullable = true)
+ |-- profit_margin_percent: double (nullable = true)
+ |-- order_priority: string (nullable = true)
+ |-- support_ticket_created: string (nullable = true)
+
+
+=== TOTAL RECORDS ===
+1000123
+
+=== SAMPLE DATA ===
++---------+--------------------+----------+-----------+---------+----------+------------+------------+----------+------------+-------------+-----------+---------------+------+---+----------------+-------------+-----------+----------------------+------------------------+---------------------+----------+--------------------+-----------+------------+------+------------------+---------------------+--------------+--------------+--------+----------------+-------------------+---------------+--------+----------+-------+--------+--------------+--------------+----------------+---------------+-----------------+-------------+----------------+------------------+---------------+------+----------------+--------------------+-----------+-----------+---------------+-----------+--------------+------------------------+-------------+---------------------+----------------+---------------------+--------------+----------------------+
+| order_id|          order_date|order_year|order_month|order_day|order_hour|order_minute|order_second|is_weekend|order_status|return_reason|customer_id|  customer_name|gender|age|customer_segment|      country|       city|customer_loyalty_score|total_orders_by_customer|account_creation_date|product_id|        product_name|   category|sub_category| brand|product_rating_avg|product_reviews_count|stock_quantity|unit_price_usd|quantity|discount_percent|discount_amount_usd|total_price_usd|cost_usd|profit_usd|tax_usd|currency|payment_method|payment_status|installment_plan|shipping_method|shipping_cost_usd|delivery_days|shipping_country|warehouse_location|delivery_status|rating|review_sentiment|   customer_feedback|coupon_used|coupon_code|campaign_source|device_type|traffic_source|session_duration_minutes|pages_visited|abandoned_cart_before|fraud_risk_score|profit_margin_percent|order_priority|support_ticket_created|
++---------+--------------------+----------+-----------+---------+----------+------------+------------+----------+------------+-------------+-----------+---------------+------+---+----------------+-------------+-----------+----------------------+------------------------+---------------------+----------+--------------------+-----------+------------+------+------------------+---------------------+--------------+--------------+--------+----------------+-------------------+---------------+--------+----------+-------+--------+--------------+--------------+----------------+---------------+-----------------+-------------+----------------+------------------+---------------+------+----------------+--------------------+-----------+-----------+---------------+-----------+--------------+------------------------+-------------+---------------------+----------------+---------------------+--------------+----------------------+
+|ORD-XAJI0|2024-10-14 11:20:...|      2024|         10|       14|        11|          20|           5|        No|   Completed|         NULL|  CUS-6DPBH|    Drew Warren|  Male| 53|         Regular|  Netherlands|    Utrecht|                  22.0|                      38|           2022-04-23|  PRD-1FPK|Coffee Maker Auto...|       Home|     Kitchen|  Nike|               3.2|                 3112|            99|        120.51|       3|              10|              36.15|         325.38|  232.14|     93.24|  28.14|     USD|     Apple Pay|          Paid|              No|        Economy|             1.97|            5|     Netherlands|                UK|     In Transit|     3|         Neutral|                NULL|        Yes|    CPN-ZBI|          Email|     Mobile|        Search|                    52.1|           13|                   No|            45.3|                28.66|        Medium|                   Yes|
+|ORD-NHJ7X|2024-10-21 00:49:...|      2024|         10|       21|         0|          49|          44|        No|   Completed|         NULL|  CUS-G0FN9|Victor Sullivan|  Male| 61|         Regular|United States|Los Angeles|                  82.2|                      21|           2022-08-22|  PRD-C6UZ|   Yoga Mat Non-Slip|     Health| Supplements|  Asus|               3.8|                 3758|           146|         60.33|       2|              15|               18.1|         102.56|   67.78|     34.78|   8.96|     USD| Bank Transfer|          Paid|             Yes|       Next Day|             5.48|            3|   United States|                UK|      Delivered|     1|        Negative|Good value for money|        Yes|    CPN-W2P|     Google Ads|    Desktop|      Referral|                    36.2|           15|                   No|            97.1|                33.91|           Low|                   Yes|
+|ORD-YTJXE|2025-03-17 19:49:...|      2025|          3|       17|        19|          49|          36|        No|   Completed|         NULL|  CUS-Q85JS|   Jason Garcia|  Male| 50|             VIP|       France|       Nice|                  60.9|                      10|           2024-08-04|  PRD-T2TA|       Blender 1000W|       Home|   Furniture|  Asus|               3.0|                 2973|           899|        295.89|       3|               0|                0.0|         887.67|  419.22|    468.45|  69.56|     USD|   Credit Card|          Paid|              No|        Economy|             20.4|           13|          France|                UK|     In Transit|     2|        Negative|  Highly recommended|        Yes|    CPN-J5P|       Facebook|     Tablet|        Search|                    43.1|           13|                   No|            43.8|                52.77|          High|                    No|
+|ORD-EIMVI|2024-09-27 06:24:...|      2024|          9|       27|         6|          24|          44|        No|   Completed|         NULL|  CUS-CWI64|   David Norris|  Male| 50|         Regular|        Italy|      Milan|                  53.9|                      47|           2023-08-06|  PRD-IROD|    Badminton Racket|     Sports| Accessories|Adidas|               3.8|                 3825|           884|        186.33|       1|               0|                0.0|         186.33|  115.24|     71.09|  16.78|     USD|   Credit Card|          Paid|              No|        Express|             4.76|            8|           Italy|          USA-West|      Delivered|     3|         Neutral|  Highly recommended|        Yes|    CPN-5C3|      Instagram|     Mobile|        Direct|                    39.5|           18|                  Yes|            96.9|                38.15|           Low|                   Yes|
+|ORD-OR56F|2025-05-21 17:10:...|      2025|          5|       21|        17|          10|          48|        No|   Completed|         NULL|  CUS-O72KZ| Laura Phillips|Female| 27|         Regular|      Germany|     Berlin|                  57.9|                      35|           2023-01-02|  PRD-LBR7|Screen Protector ...|Electronics|     Cameras| Anker|               3.1|                 4160|            82|        427.16|       1|              10|              42.72|         384.44|  257.39|    127.05|  23.74|     USD|   Credit Card|          Paid|              No|       Standard|            15.48|            7|         Germany|                UK|      Delivered|     3|         Neutral|     Average quality|        Yes|    CPN-YLJ|       Facebook|     Tablet|        Social|                    28.0|            3|                  Yes|            45.8|                33.05|          High|                   Yes|
++---------+--------------------+----------+-----------+---------+----------+------------+------------+----------+------------+-------------+-----------+---------------+------+---+----------------+-------------+-----------+----------------------+------------------------+---------------------+----------+--------------------+-----------+------------+------+------------------+---------------------+--------------+--------------+--------+----------------+-------------------+---------------+--------+----------+-------+--------+--------------+--------------+----------------+---------------+-----------------+-------------+----------------+------------------+---------------+------+----------------+--------------------+-----------+-----------+---------------+-----------+--------------+------------------------+-------------+---------------------+----------------+---------------------+--------------+----------------------+
+only showing top 5 rows
+[Stage 6:>                                                          (0 + 1) / 4][Stage 6:==============>                                            (1 + 1) / 4][Stage 6:=============================>                             (2 + 1) / 4][Stage 6:============================================>              (3 + 1) / 4]                                                                                [Stage 9:>                                                          (0 + 1) / 4][Stage 9:==============>                                            (1 + 1) / 4][Stage 9:=============================>                             (2 + 1) / 4][Stage 9:============================================>              (3 + 1) / 4]                                                                                
+
+============================================================
+Q1 - Filter Completed > 500 RESULT
+============================================================
++------------------+
+|completed_over_500|
++------------------+
+|            198151|
++------------------+
+
+
+------------------------------------------------------------
+Q1 - Filter Completed > 500 EXPLAIN PLAN
+------------------------------------------------------------
+== Parsed Logical Plan ==
+'Project ['COUNT(1) AS completed_over_500#520]
++- 'Filter (('order_status = Completed) AND ('total_price_usd > 500))
+   +- 'UnresolvedRelation [ecommerce], [], false
+
+== Analyzed Logical Plan ==
+completed_over_500: bigint
+Aggregate [count(1) AS completed_over_500#520L]
++- Filter ((order_status#26 = Completed) AND (total_price_usd#50 > cast(500 as double)))
+   +- SubqueryAlias ecommerce
+      +- View (`ecommerce`, [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,sub_category#41,brand#42,product_rating_avg#43,product_reviews_count#44,stock_quantity#45,unit_price_usd#46,quantity#47,discount_percent#48,discount_amount_usd#49,total_price_usd#50,cost_usd#51,profit_usd#52,tax_usd#53,currency#54,payment_method#55,payment_status#56,installment_plan#57,shipping_method#58,shipping_cost_usd#59,delivery_days#60,shipping_country#61,warehouse_location#62,delivery_status#63,rating#64,review_sentiment#65,customer_feedback#66,coupon_used#67,coupon_code#68,campaign_source#69,device_type#70,traffic_source#71,session_duration_minutes#72,pages_visited#73,abandoned_cart_before#74,fraud_risk_score#75,profit_margin_percent#76,order_priority#77,support_ticket_created#78])
+         +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Aggregate [count(1) AS completed_over_500#520L]
++- Project
+   +- Filter ((isnotnull(order_status#26) AND isnotnull(total_price_usd#50)) AND ((order_status#26 = Completed) AND (total_price_usd#50 > 500.0)))
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- HashAggregate(keys=[], functions=[count(1)], output=[completed_over_500#520L])
+   +- Exchange SinglePartition, ENSURE_REQUIREMENTS, [plan_id=123]
+      +- HashAggregate(keys=[], functions=[partial_count(1)], output=[count#527L])
+         +- Project
+            +- Filter (((isnotnull(order_status#26) AND isnotnull(total_price_usd#50)) AND (order_status#26 = Completed)) AND (total_price_usd#50 > 500.0))
+               +- FileScan csv [order_status#26,total_price_usd#50] Batched: false, DataFilters: [isnotnull(order_status#26), isnotnull(total_price_usd#50), (order_status#26 = Completed), (total..., Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [IsNotNull(order_status), IsNotNull(total_price_usd), EqualTo(order_status,Completed), GreaterTha..., ReadSchema: struct<order_status:string,total_price_usd:double>
+
+
+Q1 - Filter Completed > 500 Time: 10.612 seconds
+
+============================================================
+Q2 - Revenue by cateSgory RESULT
+============================================================
++-----------+--------------+
+|   category| total_revenue|
++-----------+--------------+
+|Electronics|1.3986598694E8|
+|       Home| 8.782867776E7|
+|     Sports| 7.291747085E7|
+|     Health| 5.746792555E7|
+|   Clothing|  4.52057959E7|
++-----------+--------------+
+
+
+------------------------------------------------------------
+Q2 - Revenue by cateSgory EXPLAIN PLAN
+------------------------------------------------------------
+== Parsed Logical Plan ==
+'Sort ['total_revenue DESC NULLS LAST], true
++- 'Aggregate ['category], ['category, 'ROUND('SUM('total_price_usd), 2) AS total_revenue#532]
+   +- 'UnresolvedRelation [ecommerce], [], false
+
+== Analyzed Logical Plan ==
+category: string, total_revenue: double
+Sort [total_revenue#532 DESC NULLS LAST], true
++- Aggregate [category#40], [category#40, round(sum(total_price_usd#50), 2) AS total_revenue#532]
+   +- SubqueryAlias ecommerce
+      +- View (`ecommerce`, [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,sub_category#41,brand#42,product_rating_avg#43,product_reviews_count#44,stock_quantity#45,unit_price_usd#46,quantity#47,discount_percent#48,discount_amount_usd#49,total_price_usd#50,cost_usd#51,profit_usd#52,tax_usd#53,currency#54,payment_method#55,payment_status#56,installment_plan#57,shipping_method#58,shipping_cost_usd#59,delivery_days#60,shipping_country#61,warehouse_location#62,delivery_status#63,rating#64,review_sentiment#65,customer_feedback#66,coupon_used#67,coupon_code#68,campaign_source#69,device_type#70,traffic_source#71,session_duration_minutes#72,pages_visited#73,abandoned_cart_before#74,fraud_risk_score#75,profit_margin_percent#76,order_priority#77,support_ticket_created#78])
+         +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [total_revenue#532 DESC NULLS LAST], true
++- Aggregate [category#40], [category#40, round(sum(total_price_usd#50), 2) AS total_revenue#532]
+   +- Project [category#40, total_price_usd#50]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [total_revenue#532 DESC NULLS LAST], true, 0
+   +- Exchange rangepartitioning(total_revenue#532 DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=188]
+      +- HashAggregate(keys=[category#40], functions=[sum(total_price_usd#50)], output=[category#40, total_revenue#532])
+         +- Exchange hashpartitioning(category#40, 8), ENSURE_REQUIREMENTS, [plan_id=185]
+            +- HashAggregate(keys=[category#40], functions=[partial_sum(total_price_usd#50)], output=[category#40, sum#543])
+               +- FileScan csv [category#40,total_price_usd#50] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<category:string,total_price_usd:double>
+
+
+Q2 - Revenue by cateSgory Time: 11.072 seconds
+
+============================================================
+[Stage 12:>                                                         (0 + 1) / 4][Stage 12:==============>                                           (1 + 1) / 4][Stage 12:=============================>                            (2 + 1) / 4][Stage 12:===========================================>              (3 + 1) / 4]                                                                                [Stage 15:>                                                         (0 + 1) / 4][Stage 15:==============>                                           (1 + 1) / 4][Stage 15:=============================>                            (2 + 1) / 4][Stage 15:===========================================>              (3 + 1) / 4]                                                                                Q3 - Avg order value by country RESULT
+============================================================
++--------------+---------------+
+|       country|avg_order_value|
++--------------+---------------+
+|         Italy|         405.73|
+|     Australia|         404.23|
+|         Spain|         403.61|
+| United States|         403.41|
+|   Netherlands|         403.24|
+|United Kingdom|         403.15|
+|       Belgium|         402.73|
+|       Germany|         402.64|
+|        Canada|         401.94|
+|        France|         401.71|
++--------------+---------------+
+
+
+------------------------------------------------------------
+Q3 - Avg order value by country EXPLAIN PLAN
+------------------------------------------------------------
+== Parsed Logical Plan ==
+'Sort ['avg_order_value DESC NULLS LAST], true
++- 'Aggregate ['country], ['country, 'ROUND('AVG('total_price_usd), 2) AS avg_order_value#551]
+   +- 'UnresolvedRelation [ecommerce], [], false
+
+== Analyzed Logical Plan ==
+country: string, avg_order_value: double
+Sort [avg_order_value#551 DESC NULLS LAST], true
++- Aggregate [country#33], [country#33, round(avg(total_price_usd#50), 2) AS avg_order_value#551]
+   +- SubqueryAlias ecommerce
+      +- View (`ecommerce`, [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,sub_category#41,brand#42,product_rating_avg#43,product_reviews_count#44,stock_quantity#45,unit_price_usd#46,quantity#47,discount_percent#48,discount_amount_usd#49,total_price_usd#50,cost_usd#51,profit_usd#52,tax_usd#53,currency#54,payment_method#55,payment_status#56,installment_plan#57,shipping_method#58,shipping_cost_usd#59,delivery_days#60,shipping_country#61,warehouse_location#62,delivery_status#63,rating#64,review_sentiment#65,customer_feedback#66,coupon_used#67,coupon_code#68,campaign_source#69,device_type#70,traffic_source#71,session_duration_minutes#72,pages_visited#73,abandoned_cart_before#74,fraud_risk_score#75,profit_margin_percent#76,order_priority#77,support_ticket_created#78])
+         +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [avg_order_value#551 DESC NULLS LAST], true
++- Aggregate [country#33], [country#33, round(avg(total_price_usd#50), 2) AS avg_order_value#551]
+   +- Project [country#33, total_price_usd#50]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [avg_order_value#551 DESC NULLS LAST], true, 0
+   +- Exchange rangepartitioning(avg_order_value#551 DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=253]
+      +- HashAggregate(keys=[country#33], functions=[avg(total_price_usd#50)], output=[country#33, avg_order_value#551])
+         +- Exchange hashpartitioning(country#33, 8), ENSURE_REQUIREMENTS, [plan_id=250]
+            +- HashAggregate(keys=[country#33], functions=[partial_avg(total_price_usd#50)], output=[country#33, sum#563, count#564L])
+               +- FileScan csv [country#33,total_price_usd#50] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<country:string,total_price_usd:double>
+
+
+Q3 - Avg order value by country Time: 9.800 seconds
+
+============================================================
+Q4 - Orders by payment method RESULT
+============================================================
++--------------+-----------+
+|payment_method|order_count|
++--------------+-----------+
+|    Debit Card|     200805|
+| Bank Transfer|     200213|
+|        PayPal|     199881|
+|     Apple Pay|     199814|
+|   Credit Card|     199410|
++--------------+-----------+
+
+
+------------------------------------------------------------
+Q4 - Orders by payment method EXPLAIN PLAN
+------------------------------------------------------------
+[Stage 18:>                                                         (0 + 1) / 4][Stage 18:==============>                                           (1 + 1) / 4][Stage 18:=============================>                            (2 + 1) / 4][Stage 18:===========================================>              (3 + 1) / 4][Stage 20:>                                                         (0 + 1) / 1]                                                                                [Stage 21:>                                                         (0 + 1) / 4][Stage 21:==============>                                           (1 + 1) / 4][Stage 21:=============================>                            (2 + 1) / 4][Stage 21:===========================================>              (3 + 1) / 4]                                                                                == Parsed Logical Plan ==
+'Sort ['order_count DESC NULLS LAST], true
++- 'Aggregate ['payment_method], ['payment_method, 'COUNT(1) AS order_count#574]
+   +- 'UnresolvedRelation [ecommerce], [], false
+
+== Analyzed Logical Plan ==
+payment_method: string, order_count: bigint
+Sort [order_count#574L DESC NULLS LAST], true
++- Aggregate [payment_method#55], [payment_method#55, count(1) AS order_count#574L]
+   +- SubqueryAlias ecommerce
+      +- View (`ecommerce`, [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,sub_category#41,brand#42,product_rating_avg#43,product_reviews_count#44,stock_quantity#45,unit_price_usd#46,quantity#47,discount_percent#48,discount_amount_usd#49,total_price_usd#50,cost_usd#51,profit_usd#52,tax_usd#53,currency#54,payment_method#55,payment_status#56,installment_plan#57,shipping_method#58,shipping_cost_usd#59,delivery_days#60,shipping_country#61,warehouse_location#62,delivery_status#63,rating#64,review_sentiment#65,customer_feedback#66,coupon_used#67,coupon_code#68,campaign_source#69,device_type#70,traffic_source#71,session_duration_minutes#72,pages_visited#73,abandoned_cart_before#74,fraud_risk_score#75,profit_margin_percent#76,order_priority#77,support_ticket_created#78])
+         +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [order_count#574L DESC NULLS LAST], true
++- Aggregate [payment_method#55], [payment_method#55, count(1) AS order_count#574L]
+   +- Project [payment_method#55]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [order_count#574L DESC NULLS LAST], true, 0
+   +- Exchange rangepartitioning(order_count#574L DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=318]
+      +- HashAggregate(keys=[payment_method#55], functions=[count(1)], output=[payment_method#55, order_count#574L])
+         +- Exchange hashpartitioning(payment_method#55, 8), ENSURE_REQUIREMENTS, [plan_id=315]
+            +- HashAggregate(keys=[payment_method#55], functions=[partial_count(1)], output=[payment_method#55, count#585L])
+               +- FileScan csv [payment_method#55] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<payment_method:string>
+
+
+Q4 - Orders by payment method Time: 11.978 seconds
+
+============================================================
+Q5 - Max order per customer RESULT
+============================================================
++-----------+---------+
+|customer_id|max_order|
++-----------+---------+
+|  CUS-A9QVX|  2499.75|
+|  CUS-SF2Q8|  2499.45|
+|  CUS-WKXXV|   2499.2|
+|  CUS-LY7WI|  2499.15|
+|  CUS-ESEP9|  2498.95|
+|  CUS-8TUG3|   2498.8|
+|  CUS-F3THO|  2498.75|
+|  CUS-UR59J|  2498.45|
+|  CUS-9SBVR|   2497.8|
+|  CUS-1BE0M|   2497.6|
++-----------+---------+
+
+
+------------------------------------------------------------
+Q5 - Max order per customer EXPLAIN PLAN
+------------------------------------------------------------
+== Parsed Logical Plan ==
+'GlobalLimit 10
++- 'LocalLimit 10
+   +- 'Sort ['max_order DESC NULLS LAST], true
+      +- 'Aggregate ['customer_id], ['customer_id, 'MAX('total_price_usd) AS max_order#590]
+         +- 'UnresolvedRelation [ecommerce], [], false
+
+== Analyzed Logical Plan ==
+customer_id: string, max_order: double
+GlobalLimit 10
++- LocalLimit 10
+   +- Sort [max_order#590 DESC NULLS LAST], true
+      +- Aggregate [customer_id#28], [customer_id#28, max(total_price_usd#50) AS max_order#590]
+         +- SubqueryAlias ecommerce
+            +- View (`ecommerce`, [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,sub_category#41,brand#42,product_rating_avg#43,product_reviews_count#44,stock_quantity#45,unit_price_usd#46,quantity#47,discount_percent#48,discount_amount_usd#49,total_price_usd#50,cost_usd#51,profit_usd#52,tax_usd#53,currency#54,payment_method#55,payment_status#56,installment_plan#57,shipping_method#58,shipping_cost_usd#59,delivery_days#60,shipping_country#61,warehouse_location#62,delivery_status#63,rating#64,review_sentiment#65,customer_feedback#66,coupon_used#67,coupon_code#68,campaign_source#69,device_type#70,traffic_source#71,session_duration_minutes#72,pages_visited#73,abandoned_cart_before#74,fraud_risk_score#75,profit_margin_percent#76,order_priority#77,support_ticket_created#78])
+               +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+GlobalLimit 10
++- LocalLimit 10
+   +- Sort [max_order#590 DESC NULLS LAST], true
+      +- Aggregate [customer_id#28], [customer_id#28, max(total_price_usd#50) AS max_order#590]
+         +- Project [customer_id#28, total_price_usd#50]
+            +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- TakeOrderedAndProject(limit=10, orderBy=[max_order#590 DESC NULLS LAST], output=[customer_id#28,max_order#590])
+   +- HashAggregate(keys=[customer_id#28], functions=[max(total_price_usd#50)], output=[customer_id#28, max_order#590])
+      +- Exchange hashpartitioning(customer_id#28, 8), ENSURE_REQUIREMENTS, [plan_id=379]
+         +- HashAggregate(keys=[customer_id#28], functions=[partial_max(total_price_usd#50)], output=[customer_id#28, max#601])
+            +- FileScan csv [customer_id#28,total_price_usd#50] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<customer_id:string,total_price_usd:double>
+
+
+Q5 - Max order per customer Time: 17.665 seconds
+
+============================================================
+Q6 - Orders per month RESULT
+============================================================
++-------+-----------+
+|  month|order_count|
++-------+-----------+
+|2024-02|      37052|
+|2024-03|      42716|
+|2024-04|      41415|
+|2024-05|      42697|
+|2024-06|      40756|
+|2024-07|      42255|
+|2024-08|      42241|
+|2024-09|      41035|
+|2024-10|      42245|
+|2024-11|      40800|
++-------+-----------+
+only showing top 10 rows
+
+[Stage 24:>                                                         (0 + 1) / 4][Stage 24:==============>                                           (1 + 1) / 4][Stage 24:=============================>                            (2 + 1) / 4][Stage 24:===========================================>              (3 + 1) / 4]                                                                                
+------------------------------------------------------------
+Q6 - Orders per month EXPLAIN PLAN
+------------------------------------------------------------
+== Parsed Logical Plan ==
+'Sort ['month ASC NULLS FIRST], true
++- 'Aggregate ['month], ['DATE_FORMAT('order_date, yyyy-MM) AS month#609, 'COUNT(1) AS order_count#610]
+   +- 'UnresolvedRelation [ecommerce], [], false
+
+== Analyzed Logical Plan ==
+month: string, order_count: bigint
+Sort [month#609 ASC NULLS FIRST], true
++- Aggregate [date_format(order_date#18, yyyy-MM, Some(Africa/Cairo))], [date_format(order_date#18, yyyy-MM, Some(Africa/Cairo)) AS month#609, count(1) AS order_count#610L]
+   +- SubqueryAlias ecommerce
+      +- View (`ecommerce`, [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,sub_category#41,brand#42,product_rating_avg#43,product_reviews_count#44,stock_quantity#45,unit_price_usd#46,quantity#47,discount_percent#48,discount_amount_usd#49,total_price_usd#50,cost_usd#51,profit_usd#52,tax_usd#53,currency#54,payment_method#55,payment_status#56,installment_plan#57,shipping_method#58,shipping_cost_usd#59,delivery_days#60,shipping_country#61,warehouse_location#62,delivery_status#63,rating#64,review_sentiment#65,customer_feedback#66,coupon_used#67,coupon_code#68,campaign_source#69,device_type#70,traffic_source#71,session_duration_minutes#72,pages_visited#73,abandoned_cart_before#74,fraud_risk_score#75,profit_margin_percent#76,order_priority#77,support_ticket_created#78])
+         +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [month#609 ASC NULLS FIRST], true
++- Aggregate [_groupingexpression#627], [_groupingexpression#627 AS month#609, count(1) AS order_count#610L]
+   +- Project [date_format(order_date#18, yyyy-MM, Some(Africa/Cairo)) AS _groupingexpression#627]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [month#609 ASC NULLS FIRST], true, 0
+   +- Exchange rangepartitioning(month#609 ASC NULLS FIRST, 8), ENSURE_REQUIREMENTS, [plan_id=454]
+      +- HashAggregate(keys=[_groupingexpression#627], functions=[count(1)], output=[month#609, order_count#610L])
+         +- Exchange hashpartitioning(_groupingexpression#627, 8), ENSURE_REQUIREMENTS, [plan_id=451]
+            +- HashAggregate(keys=[_groupingexpression#627], functions=[partial_count(1)], output=[_groupingexpression#627, count#622L])
+               +- Project [date_format(order_date#18, yyyy-MM, Some(Africa/Cairo)) AS _groupingexpression#627]
+                  +- FileScan csv [order_date#18] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<order_date:timestamp>
+
+
+Q6 - Orders per month Time: 11.506 seconds
+
+============================================================
+Q7 - Revenue by category & country RESULT
+============================================================
++-----------+--------------+-------------+
+|   category|       country|      revenue|
++-----------+--------------+-------------+
+|Electronics|   Netherlands|1.416504796E7|
+|Electronics|         Italy|1.410976446E7|
+|Electronics|       Belgium|1.406366308E7|
+|Electronics|         Spain|1.400882483E7|
+|Electronics|United Kingdom|1.400408099E7|
+|Electronics|        Canada|1.397057633E7|
+|Electronics| United States|1.396531785E7|
+|Electronics|     Australia|1.395247316E7|
+|Electronics|       Germany|1.387607852E7|
+|Electronics|        France|1.375015976E7|
++-----------+--------------+-------------+
+
+
+------------------------------------------------------------
+Q7 - Revenue by category & country EXPLAIN PLAN
+------------------------------------------------------------
+[Stage 27:>                                                         (0 + 1) / 4][Stage 27:==============>                                           (1 + 1) / 4][Stage 27:=============================>                            (2 + 1) / 4][Stage 27:===========================================>              (3 + 1) / 4][Stage 29:>                                                         (0 + 1) / 1]                                                                                == Parsed Logical Plan ==
+'GlobalLimit 10
++- 'LocalLimit 10
+   +- 'Sort ['revenue DESC NULLS LAST], true
+      +- 'Aggregate ['category, 'country], ['category, 'country, 'ROUND('SUM('total_price_usd), 2) AS revenue#628]
+         +- 'UnresolvedRelation [ecommerce], [], false
+
+== Analyzed Logical Plan ==
+category: string, country: string, revenue: double
+GlobalLimit 10
++- LocalLimit 10
+   +- Sort [revenue#628 DESC NULLS LAST], true
+      +- Aggregate [category#40, country#33], [category#40, country#33, round(sum(total_price_usd#50), 2) AS revenue#628]
+         +- SubqueryAlias ecommerce
+            +- View (`ecommerce`, [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,sub_category#41,brand#42,product_rating_avg#43,product_reviews_count#44,stock_quantity#45,unit_price_usd#46,quantity#47,discount_percent#48,discount_amount_usd#49,total_price_usd#50,cost_usd#51,profit_usd#52,tax_usd#53,currency#54,payment_method#55,payment_status#56,installment_plan#57,shipping_method#58,shipping_cost_usd#59,delivery_days#60,shipping_country#61,warehouse_location#62,delivery_status#63,rating#64,review_sentiment#65,customer_feedback#66,coupon_used#67,coupon_code#68,campaign_source#69,device_type#70,traffic_source#71,session_duration_minutes#72,pages_visited#73,abandoned_cart_before#74,fraud_risk_score#75,profit_margin_percent#76,order_priority#77,support_ticket_created#78])
+               +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+GlobalLimit 10
++- LocalLimit 10
+   +- Sort [revenue#628 DESC NULLS LAST], true
+      +- Aggregate [category#40, country#33], [category#40, country#33, round(sum(total_price_usd#50), 2) AS revenue#628]
+         +- Project [country#33, category#40, total_price_usd#50]
+            +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- TakeOrderedAndProject(limit=10, orderBy=[revenue#628 DESC NULLS LAST], output=[category#40,country#33,revenue#628])
+   +- HashAggregate(keys=[category#40, country#33], functions=[sum(total_price_usd#50)], output=[category#40, country#33, revenue#628])
+      +- Exchange hashpartitioning(category#40, country#33, 8), ENSURE_REQUIREMENTS, [plan_id=515]
+         +- HashAggregate(keys=[category#40, country#33], functions=[partial_sum(total_price_usd#50)], output=[category#40, country#33, sum#643])
+            +- FileScan csv [country#33,category#40,total_price_usd#50] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<country:string,category:string,total_price_usd:double>
+
+
+Q7 - Revenue by category & country Time: 13.893 seconds
+
+============================================================
+Q8 - Distinct products per category RESULT
+============================================================
++-----------+-----------------+
+|   category|distinct_products|
++-----------+-----------------+
+|     Sports|           189088|
+|       Home|           189059|
+|Electronics|           188408|
+|   Clothing|           188183|
+|     Health|           188127|
++-----------+-----------------+
+
+
+------------------------------------------------------------
+Q8 - Distinct products per category EXPLAIN PLAN
+------------------------------------------------------------
+[Stage 33:>                                                         (0 + 1) / 4][Stage 33:==============>                                           (1 + 1) / 4][Stage 33:=============================>                            (2 + 1) / 4][Stage 33:===========================================>              (3 + 1) / 4][Stage 35:>                                                         (0 + 1) / 1][Stage 38:>                                                         (0 + 1) / 1]                                                                                == Parsed Logical Plan ==
+'Sort ['distinct_products DESC NULLS LAST], true
++- 'Aggregate ['category], ['category, 'COUNT(distinct 'product_id) AS distinct_products#653]
+   +- 'UnresolvedRelation [ecommerce], [], false
+
+== Analyzed Logical Plan ==
+category: string, distinct_products: bigint
+Sort [distinct_products#653L DESC NULLS LAST], true
++- Aggregate [category#40], [category#40, count(distinct product_id#38) AS distinct_products#653L]
+   +- SubqueryAlias ecommerce
+      +- View (`ecommerce`, [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,sub_category#41,brand#42,product_rating_avg#43,product_reviews_count#44,stock_quantity#45,unit_price_usd#46,quantity#47,discount_percent#48,discount_amount_usd#49,total_price_usd#50,cost_usd#51,profit_usd#52,tax_usd#53,currency#54,payment_method#55,payment_status#56,installment_plan#57,shipping_method#58,shipping_cost_usd#59,delivery_days#60,shipping_country#61,warehouse_location#62,delivery_status#63,rating#64,review_sentiment#65,customer_feedback#66,coupon_used#67,coupon_code#68,campaign_source#69,device_type#70,traffic_source#71,session_duration_minutes#72,pages_visited#73,abandoned_cart_before#74,fraud_risk_score#75,profit_margin_percent#76,order_priority#77,support_ticket_created#78])
+         +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+Sort [distinct_products#653L DESC NULLS LAST], true
++- Aggregate [category#40], [category#40, count(distinct product_id#38) AS distinct_products#653L]
+   +- Project [product_id#38, category#40]
+      +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [distinct_products#653L DESC NULLS LAST], true, 0
+   +- Exchange rangepartitioning(distinct_products#653L DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=647]
+      +- HashAggregate(keys=[category#40], functions=[count(distinct product_id#38)], output=[category#40, distinct_products#653L])
+         +- Exchange hashpartitioning(category#40, 8), ENSURE_REQUIREMENTS, [plan_id=644]
+            +- HashAggregate(keys=[category#40], functions=[partial_count(distinct product_id#38)], output=[category#40, count#665L])
+               +- HashAggregate(keys=[category#40, product_id#38], functions=[], output=[category#40, product_id#38])
+                  +- Exchange hashpartitioning(category#40, product_id#38, 8), ENSURE_REQUIREMENTS, [plan_id=640]
+                     +- HashAggregate(keys=[category#40, product_id#38], functions=[], output=[category#40, product_id#38])
+                        +- FileScan csv [product_id#38,category#40] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<product_id:string,category:string>
+
+
+Q8 - Distinct products per category Time: 31.761 seconds
+
+============================================================
+Q9 - Window function ranking RESULT
+============================================================
++-----------+------------------+----------+
+|customer_id|       total_spend|spend_rank|
++-----------+------------------+----------+
+|  CUS-CSPL3|           4267.91|         1|
+|  CUS-WXS3A|4043.9300000000003|         2|
+|  CUS-DK6O9|            3888.2|         3|
+|  CUS-A67K3|           3735.48|         4|
+|  CUS-P1DO3|3542.4300000000003|         5|
+|  CUS-5XVL1|            3506.8|         6|
+|  CUS-96P9R|           3495.37|         7|
+|  CUS-Q9X3X|3467.6400000000003|         8|
+|  CUS-A2OPJ|           3422.48|         9|
+|  CUS-V010N|3334.0200000000004|        10|
++-----------+------------------+----------+
+only showing top 10 rows
+
+
+------------------------------------------------------------
+Q9 - Window function ranking EXPLAIN PLAN
+------------------------------------------------------------
+[Stage 39:>                                                         (0 + 1) / 4][Stage 39:==============>                                           (1 + 1) / 4][Stage 39:=============================>                            (2 + 1) / 4][Stage 39:===========================================>              (3 + 1) / 4][Stage 41:>                                                         (0 + 1) / 1]                                                                                [Stage 46:>                                                         (0 + 1) / 1]                                                                                == Parsed Logical Plan ==
+'GlobalLimit 20
++- 'LocalLimit 20
+   +- 'Sort ['spend_rank ASC NULLS FIRST], true
+      +- 'Aggregate ['customer_id], ['customer_id, 'SUM('total_price_usd) AS total_spend#677, 'RANK() windowspecdefinition('SUM('total_price_usd) DESC NULLS LAST, unspecifiedframe$()) AS spend_rank#678]
+         +- 'UnresolvedRelation [ecommerce], [], false
+
+== Analyzed Logical Plan ==
+customer_id: string, total_spend: double, spend_rank: int
+GlobalLimit 20
++- LocalLimit 20
+   +- Sort [spend_rank#678 ASC NULLS FIRST], true
+      +- Project [customer_id#28, total_spend#677, spend_rank#678]
+         +- Project [customer_id#28, total_spend#677, _w0#683, spend_rank#678, spend_rank#678]
+            +- Window [rank(_w0#683) windowspecdefinition(_w0#683 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS spend_rank#678], [_w0#683 DESC NULLS LAST]
+               +- Aggregate [customer_id#28], [customer_id#28, sum(total_price_usd#50) AS total_spend#677, sum(total_price_usd#50) AS _w0#683]
+                  +- SubqueryAlias ecommerce
+                     +- View (`ecommerce`, [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,sub_category#41,brand#42,product_rating_avg#43,product_reviews_count#44,stock_quantity#45,unit_price_usd#46,quantity#47,discount_percent#48,discount_amount_usd#49,total_price_usd#50,cost_usd#51,profit_usd#52,tax_usd#53,currency#54,payment_method#55,payment_status#56,installment_plan#57,shipping_method#58,shipping_cost_usd#59,delivery_days#60,shipping_country#61,warehouse_location#62,delivery_status#63,rating#64,review_sentiment#65,customer_feedback#66,coupon_used#67,coupon_code#68,campaign_source#69,device_type#70,traffic_source#71,session_duration_minutes#72,pages_visited#73,abandoned_cart_before#74,fraud_risk_score#75,profit_margin_percent#76,order_priority#77,support_ticket_created#78])
+                        +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+GlobalLimit 20
++- LocalLimit 20
+   +- Sort [spend_rank#678 ASC NULLS FIRST], true
+      +- Project [customer_id#28, total_spend#677, spend_rank#678]
+         +- Window [rank(_w0#683) windowspecdefinition(_w0#683 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS spend_rank#678], [_w0#683 DESC NULLS LAST]
+            +- Aggregate [customer_id#28], [customer_id#28, sum(total_price_usd#50) AS total_spend#677, sum(total_price_usd#50) AS _w0#683]
+               +- Project [customer_id#28, total_price_usd#50]
+                  +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- TakeOrderedAndProject(limit=20, orderBy=[spend_rank#678 ASC NULLS FIRST], output=[customer_id#28,total_spend#677,spend_rank#678])
+   +- Project [customer_id#28, total_spend#677, spend_rank#678]
+      +- Window [rank(_w0#683) windowspecdefinition(_w0#683 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS spend_rank#678], [_w0#683 DESC NULLS LAST]
+         +- Sort [_w0#683 DESC NULLS LAST], false, 0
+            +- Exchange SinglePartition, ENSURE_REQUIREMENTS, [plan_id=785]
+               +- HashAggregate(keys=[customer_id#28], functions=[sum(total_price_usd#50)], output=[customer_id#28, total_spend#677, _w0#683])
+                  +- Exchange hashpartitioning(customer_id#28, 8), ENSURE_REQUIREMENTS, [plan_id=782]
+                     +- HashAggregate(keys=[customer_id#28], functions=[partial_sum(total_price_usd#50)], output=[customer_id#28, sum#703])
+                        +- FileScan csv [customer_id#28,total_price_usd#50] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<customer_id:string,total_price_usd:double>
+
+
+Q9 - Window function ranking Time: 24.026 seconds
+
+============================================================
+Q10 - High-value customers (subquery) RESULT
+============================================================
++-----------+------------------+
+|customer_id|       total_spend|
++-----------+------------------+
+|  CUS-CSPL3|           4267.91|
+|  CUS-WXS3A|4043.9300000000003|
+|  CUS-DK6O9|            3888.2|
+|  CUS-A67K3|           3735.48|
+|  CUS-P1DO3|3542.4300000000003|
+|  CUS-5XVL1|            3506.8|
+|  CUS-96P9R|           3495.37|
+|  CUS-Q9X3X|3467.6400000000003|
+|  CUS-A2OPJ|           3422.48|
+|  CUS-V010N|3334.0200000000004|
++-----------+------------------+
+
+
+------------------------------------------------------------
+Q10 - High-value customers (subquery) EXPLAIN PLAN
+------------------------------------------------------------
+== Parsed Logical Plan ==
+'GlobalLimit 10
++- 'LocalLimit 10
+   +- 'Sort ['total_spend DESC NULLS LAST], true
+      +- 'Project [*]
+         +- 'Filter ('total_spend > scalar-subquery#716 [])
+            :  +- 'Project [unresolvedalias('AVG('total_spend), None)]
+            :     +- 'SubqueryAlias __auto_generated_subquery_name
+            :        +- 'Aggregate ['customer_id], ['customer_id, 'SUM('total_price_usd) AS total_spend#715]
+            :           +- 'UnresolvedRelation [ecommerce], [], false
+            +- 'SubqueryAlias customer_totals
+               +- 'Aggregate ['customer_id], ['customer_id, 'SUM('total_price_usd) AS total_spend#714]
+                  +- 'UnresolvedRelation [ecommerce], [], false
+
+== Analyzed Logical Plan ==
+customer_id: string, total_spend: double
+GlobalLimit 10
++- LocalLimit 10
+   +- Sort [total_spend#714 DESC NULLS LAST], true
+      +- Project [customer_id#28, total_spend#714]
+         +- Filter (total_spend#714 > scalar-subquery#716 [])
+            :  +- Aggregate [avg(total_spend#715) AS avg(total_spend)#720]
+            :     +- SubqueryAlias __auto_generated_subquery_name
+            :        +- Aggregate [customer_id#732], [customer_id#732, sum(total_price_usd#754) AS total_spend#715]
+            :           +- SubqueryAlias ecommerce
+            :              +- View (`ecommerce`, [order_id#721,order_date#722,order_year#723,order_month#724,order_day#725,order_hour#726,order_minute#727,order_second#728,is_weekend#729,order_status#730,return_reason#731,customer_id#732,customer_name#733,gender#734,age#735,customer_segment#736,country#737,city#738,customer_loyalty_score#739,total_orders_by_customer#740,account_creation_date#741,product_id#742,product_name#743,category#744,sub_category#745,brand#746,product_rating_avg#747,product_reviews_count#748,stock_quantity#749,unit_price_usd#750,quantity#751,discount_percent#752,discount_amount_usd#753,total_price_usd#754,cost_usd#755,profit_usd#756,tax_usd#757,currency#758,payment_method#759,payment_status#760,installment_plan#761,shipping_method#762,shipping_cost_usd#763,delivery_days#764,shipping_country#765,warehouse_location#766,delivery_status#767,rating#768,review_sentiment#769,customer_feedback#770,coupon_used#771,coupon_code#772,campaign_source#773,device_type#774,traffic_source#775,session_duration_minutes#776,pages_visited#777,abandoned_cart_before#778,fraud_risk_score#779,profit_margin_percent#780,order_priority#781,support_ticket_created#782])
+            :                 +- Relation [order_id#721,order_date#722,order_year#723,order_month#724,order_day#725,order_hour#726,order_minute#727,order_second#728,is_weekend#729,order_status#730,return_reason#731,customer_id#732,customer_name#733,gender#734,age#735,customer_segment#736,country#737,city#738,customer_loyalty_score#739,total_orders_by_customer#740,account_creation_date#741,product_id#742,product_name#743,category#744,... 38 more fields] csv
+            +- SubqueryAlias customer_totals
+               +- Aggregate [customer_id#28], [customer_id#28, sum(total_price_usd#50) AS total_spend#714]
+                  +- SubqueryAlias ecommerce
+                     +- View (`ecommerce`, [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,sub_category#41,brand#42,product_rating_avg#43,product_reviews_count#44,stock_quantity#45,unit_price_usd#46,quantity#47,discount_percent#48,discount_amount_usd#49,total_price_usd#50,cost_usd#51,profit_usd#52,tax_usd#53,currency#54,payment_method#55,payment_status#56,installment_plan#57,shipping_method#58,shipping_cost_usd#59,delivery_days#60,shipping_country#61,warehouse_location#62,delivery_status#63,rating#64,review_sentiment#65,customer_feedback#66,coupon_used#67,coupon_code#68,campaign_source#69,device_type#70,traffic_source#71,session_duration_minutes#72,pages_visited#73,abandoned_cart_before#74,fraud_risk_score#75,profit_margin_percent#76,order_priority#77,support_ticket_created#78])
+                        +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Optimized Logical Plan ==
+GlobalLimit 10
++- LocalLimit 10
+   +- Sort [total_spend#714 DESC NULLS LAST], true
+      +- Filter (isnotnull(total_spend#714) AND (total_spend#714 > scalar-subquery#716 []))
+         :  +- Aggregate [avg(total_spend#715) AS avg(total_spend)#720]
+         :     +- Aggregate [customer_id#732], [sum(total_price_usd#754) AS total_spend#715]
+         :        +- Project [customer_id#732, total_price_usd#754]
+         :           +- Relation [order_id#721,order_date#722,order_year#723,order_month#724,order_day#725,order_hour#726,order_minute#727,order_second#728,is_weekend#729,order_status#730,return_reason#731,customer_id#732,customer_name#733,gender#734,age#735,customer_segment#736,country#737,city#738,customer_loyalty_score#739,total_orders_by_customer#740,account_creation_date#741,product_id#742,product_name#743,category#744,... 38 more fields] csv
+         +- Aggregate [customer_id#28], [customer_id#28, sum(total_price_usd#50) AS total_spend#714]
+            +- Project [customer_id#28, total_price_usd#50]
+               +- Relation [order_id#17,order_date#18,order_year#19,order_month#20,order_day#21,order_hour#22,order_minute#23,order_second#24,is_weekend#25,order_status#26,return_reason#27,customer_id#28,customer_name#29,gender#30,age#31,customer_segment#32,country#33,city#34,customer_loyalty_score#35,total_orders_by_customer#36,account_creation_date#37,product_id#38,product_name#39,category#40,... 38 more fields] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- TakeOrderedAndProject(limit=10, orderBy=[total_spend#714 DESC NULLS LAST], output=[customer_id#28,total_spend#714])
+   +- Filter (isnotnull(total_spend#714) AND (total_spend#714 > Subquery subquery#716, [id=#968]))
+      :  +- Subquery subquery#716, [id=#968]
+      :     +- AdaptiveSparkPlan isFinalPlan=false
+      :        +- HashAggregate(keys=[], functions=[avg(total_spend#715)], output=[avg(total_spend)#720])
+      :           +- Exchange SinglePartition, ENSURE_REQUIREMENTS, [plan_id=966]
+      :              +- HashAggregate(keys=[], functions=[partial_avg(total_spend#715)], output=[sum#795, count#796L])
+      :                 +- HashAggregate(keys=[customer_id#732], functions=[sum(total_price_usd#754)], output=[total_spend#715])
+      :                    +- Exchange hashpartitioning(customer_id#732, 8), ENSURE_REQUIREMENTS, [plan_id=962]
+      :                       +- HashAggregate(keys=[customer_id#732], functions=[partial_sum(total_price_usd#754)], output=[customer_id#732, sum#798])
+      :                          +- FileScan csv [customer_id#732,total_price_usd#754] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<customer_id:string,total_price_usd:double>
+      +- HashAggregate(keys=[customer_id#28], functions=[sum(total_price_usd#50)], output=[customer_id#28, total_spend#714])
+         +- Exchange hashpartitioning(customer_id#28, 8), ENSURE_REQUIREMENTS, [plan_id=972]
+            +- HashAggregate(keys=[customer_id#28], functions=[partial_sum(total_price_usd#50)], output=[customer_id#28, sum#792])
+               +- FileScan csv [customer_id#28,total_price_usd#50] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/home/yousef/spark_project/data/ecommerce.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<customer_id:string,total_price_usd:double>
+
+
+Q10 - High-value customers (subquery) Time: 28.862 seconds
+
+All SQL timings saved.
