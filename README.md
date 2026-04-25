@@ -15,13 +15,14 @@
 8. [📈 Execution Plan Analysis](#-execution-plan-analysis)  
 9. [⚡ Performance Comparison](#-performance-comparison)  
 10. [🚀 Optimization Analysis](#-optimization-analysis)  
-11. [📌 Final Insights](#-final-insights)  
-12. [📂 Project Structure](#-project-structure)  
-13. [🛠️ Setup & Installation](#️-setup--installation)  
-14. [▶️ How to Run](#️-how-to-run)  
-15. [📊 Results](#-results)  
-16. [📚 Technologies Used](#-technologies-used)  
-17. [👥 Team](#-team)  
+11. [📊 Cluster Configuration & Scalability Tests](#-cluster-configuration--scalability-tests)  
+12. [📌 Final Insights](#-final-insights)  
+13. [📂 Project Structure](#-project-structure)  
+14. [🛠️ Setup & Installation](#️-setup--installation)  
+15. [▶️ How to Run](#️-how-to-run)  
+16. [📊 Results](#-results)  
+17. [📚 Technologies Used](#-technologies-used)  
+18. [👥 Team](#-team)  
 
 ---
 
@@ -237,6 +238,16 @@ Each query implemented using:
 
 ---
 
+# 📊 Cluster Configuration & Scalability Tests
+
+To evaluate system scalability, different Spark configurations were tested by varying the number of partitions and memory allocation.
+
+The results show that increasing partitions improves parallelism but may introduce overhead if too large. Similarly, increasing memory improves performance up to a certain limit, after which the improvement becomes minimal.
+
+These experiments demonstrate how Spark performance depends on cluster configuration and resource allocation.
+
+---
+
 # 📌 Final Insights
 
 ## Best API
@@ -269,14 +280,29 @@ Each query implemented using:
 ```
 spark_project/
 ├── setup.py
+├── convert_parquet.py
 ├── preprocessing.py
 ├── eda.py
 ├── data/
+│   ├── ecommerce.csv
+│   └── ecommerce.parquet/
 ├── rdd/
+│   └── queries_rdd.py
 ├── dataframe/
+│   └── queries_df.py
 ├── sql/
+│   └── queries_sql.py
 ├── optimization/
+│   └── join_optimization.py
 ├── results/
+│   ├── rdd_output.log
+│   ├── df_output.log
+│   ├── sql_output.log
+│   ├── optimization_output.log
+│   ├── rdd_timings.json
+│   ├── df_timings.json
+│   ├── sql_timings.json
+│   └── optimization_timings.json
 ```
 
 ---
